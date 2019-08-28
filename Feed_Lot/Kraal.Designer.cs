@@ -232,6 +232,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "frmKraal";
             this.Text = "Kraal";
+            this.Load += new System.EventHandler(this.FrmKraal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

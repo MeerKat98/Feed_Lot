@@ -46,7 +46,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(400, 208);
+            this.btnClose.Location = new System.Drawing.Point(403, 149);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 46);
             this.btnClose.TabIndex = 0;
@@ -133,7 +133,7 @@
             // 
             // btnAddAnimal
             // 
-            this.btnAddAnimal.Location = new System.Drawing.Point(12, 208);
+            this.btnAddAnimal.Location = new System.Drawing.Point(15, 149);
             this.btnAddAnimal.Name = "btnAddAnimal";
             this.btnAddAnimal.Size = new System.Drawing.Size(75, 46);
             this.btnAddAnimal.TabIndex = 13;
@@ -151,7 +151,7 @@
             // 
             // btnAddType
             // 
-            this.btnAddType.Location = new System.Drawing.Point(119, 208);
+            this.btnAddType.Location = new System.Drawing.Point(122, 149);
             this.btnAddType.Name = "btnAddType";
             this.btnAddType.Size = new System.Drawing.Size(121, 23);
             this.btnAddType.TabIndex = 15;
@@ -161,7 +161,7 @@
             // 
             // btnAddSpecies
             // 
-            this.btnAddSpecies.Location = new System.Drawing.Point(255, 208);
+            this.btnAddSpecies.Location = new System.Drawing.Point(258, 149);
             this.btnAddSpecies.Name = "btnAddSpecies";
             this.btnAddSpecies.Size = new System.Drawing.Size(121, 23);
             this.btnAddSpecies.TabIndex = 16;
@@ -173,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 265);
+            this.ClientSize = new System.Drawing.Size(490, 207);
             this.Controls.Add(this.btnAddSpecies);
             this.Controls.Add(this.btnAddType);
             this.Controls.Add(this.cmbKraal);

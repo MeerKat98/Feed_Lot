@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbFeedType = new System.Windows.Forms.ComboBox();
+            this.cmbKraal = new System.Windows.Forms.ComboBox();
+            this.txtFeedQuantitiy = new System.Windows.Forms.TextBox();
             this.btnRecord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -75,28 +75,28 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Feed Type:";
             // 
-            // comboBox1
+            // cmbFeedType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(152, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cmbFeedType.FormattingEnabled = true;
+            this.cmbFeedType.Location = new System.Drawing.Point(152, 60);
+            this.cmbFeedType.Name = "cmbFeedType";
+            this.cmbFeedType.Size = new System.Drawing.Size(121, 21);
+            this.cmbFeedType.TabIndex = 7;
             // 
-            // comboBox2
+            // cmbKraal
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(152, 33);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 8;
+            this.cmbKraal.FormattingEnabled = true;
+            this.cmbKraal.Location = new System.Drawing.Point(152, 33);
+            this.cmbKraal.Name = "cmbKraal";
+            this.cmbKraal.Size = new System.Drawing.Size(121, 21);
+            this.cmbKraal.TabIndex = 8;
             // 
-            // textBox1
+            // txtFeedQuantitiy
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtFeedQuantitiy.Location = new System.Drawing.Point(152, 87);
+            this.txtFeedQuantitiy.Name = "txtFeedQuantitiy";
+            this.txtFeedQuantitiy.Size = new System.Drawing.Size(100, 20);
+            this.txtFeedQuantitiy.TabIndex = 9;
             // 
             // btnRecord
             // 
@@ -113,9 +113,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 206);
             this.Controls.Add(this.btnRecord);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtFeedQuantitiy);
+            this.Controls.Add(this.cmbKraal);
+            this.Controls.Add(this.cmbFeedType);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -133,9 +133,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbFeedType;
+        private System.Windows.Forms.ComboBox cmbKraal;
+        private System.Windows.Forms.TextBox txtFeedQuantitiy;
         private System.Windows.Forms.Button btnRecord;
     }
 }

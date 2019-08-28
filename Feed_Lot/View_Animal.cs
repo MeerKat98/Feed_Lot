@@ -62,14 +62,18 @@ namespace Farm_Monitor
             txtKraal.Text = reader[2].ToString();       //Enter the animals current kraal.
             txtTag.Text = reader[3].ToString();     //Enter animals tag code.
             DateTime arrival = Convert.ToDateTime(reader[4].ToString());     //Enter animals arrival date.
-            txtArrivalDate.Text = arrival.ToString("yyyy/MM/dd");
+            if (reader[5].ToString() == "")
+                txtDepartureDate.Text = "Not Departed.";
+            else
+                txtDepartureDate.Text = reader[5].ToString();      //Enter aniaml departure date.
+            txtArrivalDate.Text = Convert.ToString(arrival);
             txtStatus.Text = reader[6].ToString();      //Enter animals status.
             conn.Close();       //Close connection.
             txtSpecies.Text = fetchData("SELECT Description FROM SPECIES WHERE Species_ID = " + specie);        //Enter animals species description (using species_ID).
             string animal_type = fetchData("SELECT Animal_Type FROM SPECIES WHERE Species_ID = " + specie);     //Get animal_type_ID to be used later.
             txtAnimalType.Text = fetchData("SELECT Description FROM ANIMAL_TYPE WHERE Animal_Type = " + animal_type);       //Use animal_type_ID to enter animal type description.
+            txtInitialWeight.Text = fetchData("SELECT Weight FROM ANIMAL_WEIGHT WHERE Date_Weighed = #" + arrival + "# AND Animal_ID = " + animal_ID);
             /*
-            txtInitialWeight.Text = fetchData("SELECT Weight FROM ANIMAL_WEIGHT WHERE Date_Weighed = " + arrival);// + "AND Animal_ID = " + animal_ID); 
             */
         }
 

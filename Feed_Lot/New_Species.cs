@@ -13,7 +13,7 @@ namespace Farm_Monitor
 {
     public partial class New_Species : Form
     {
-        string connection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Robin de Klerk\Google Drive\Shared projects\Farm_Monitor\Farm_Monitor\Resources\FarmMonitor.accdb";
+        string connection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Farm_Monitor\FarmMonitor.accdb";
 
         public New_Species()
         {

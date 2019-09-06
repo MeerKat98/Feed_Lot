@@ -135,5 +135,10 @@ namespace Farm_Monitor
             else
                 MessageBox.Show("Failed, Animal could not be added to database.\nPlease check database availabilty and privileges");
         }
+
+        private void frmNew_Animal_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

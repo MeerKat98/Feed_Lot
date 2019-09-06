@@ -46,9 +46,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(403, 149);
+            this.btnClose.Location = new System.Drawing.Point(1075, 355);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 46);
+            this.btnClose.Size = new System.Drawing.Size(200, 110);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -57,85 +58,93 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 22);
+            this.label1.Location = new System.Drawing.Point(61, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(147, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tag Code:";
             // 
             // txtTagCode
             // 
-            this.txtTagCode.Location = new System.Drawing.Point(108, 19);
-            this.txtTagCode.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTagCode.Location = new System.Drawing.Point(288, 45);
+            this.txtTagCode.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.txtTagCode.Name = "txtTagCode";
-            this.txtTagCode.Size = new System.Drawing.Size(132, 20);
+            this.txtTagCode.Size = new System.Drawing.Size(345, 38);
             this.txtTagCode.TabIndex = 2;
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(108, 47);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWeight.Location = new System.Drawing.Point(288, 112);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(132, 20);
+            this.txtWeight.Size = new System.Drawing.Size(345, 38);
             this.txtWeight.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 50);
+            this.label2.Location = new System.Drawing.Point(61, 119);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(112, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Weight:";
             // 
             // cmbSpecies
             // 
             this.cmbSpecies.FormattingEnabled = true;
-            this.cmbSpecies.Location = new System.Drawing.Point(326, 101);
+            this.cmbSpecies.Location = new System.Drawing.Point(869, 241);
+            this.cmbSpecies.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cmbSpecies.Name = "cmbSpecies";
-            this.cmbSpecies.Size = new System.Drawing.Size(121, 21);
+            this.cmbSpecies.Size = new System.Drawing.Size(316, 39);
             this.cmbSpecies.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(272, 104);
+            this.label3.Location = new System.Drawing.Point(725, 248);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(125, 32);
             this.label3.TabIndex = 7;
             this.label3.Text = "Species:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 104);
+            this.label4.Location = new System.Drawing.Point(91, 248);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.Size = new System.Drawing.Size(181, 32);
             this.label4.TabIndex = 8;
             this.label4.Text = "Animal Type:";
             // 
             // cmbAnimalType
             // 
             this.cmbAnimalType.FormattingEnabled = true;
-            this.cmbAnimalType.Location = new System.Drawing.Point(108, 101);
+            this.cmbAnimalType.Location = new System.Drawing.Point(288, 241);
+            this.cmbAnimalType.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cmbAnimalType.Name = "cmbAnimalType";
-            this.cmbAnimalType.Size = new System.Drawing.Size(121, 21);
+            this.cmbAnimalType.Size = new System.Drawing.Size(316, 39);
             this.cmbAnimalType.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 77);
+            this.label5.Location = new System.Drawing.Point(61, 184);
+            this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.Size = new System.Drawing.Size(90, 32);
             this.label5.TabIndex = 11;
             this.label5.Text = "Kraal:";
             // 
             // btnAddAnimal
             // 
-            this.btnAddAnimal.Location = new System.Drawing.Point(15, 149);
+            this.btnAddAnimal.Location = new System.Drawing.Point(40, 355);
+            this.btnAddAnimal.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnAddAnimal.Name = "btnAddAnimal";
-            this.btnAddAnimal.Size = new System.Drawing.Size(75, 46);
+            this.btnAddAnimal.Size = new System.Drawing.Size(200, 110);
             this.btnAddAnimal.TabIndex = 13;
             this.btnAddAnimal.Text = "Add";
             this.btnAddAnimal.UseVisualStyleBackColor = true;
@@ -144,16 +153,18 @@
             // cmbKraal
             // 
             this.cmbKraal.FormattingEnabled = true;
-            this.cmbKraal.Location = new System.Drawing.Point(108, 74);
+            this.cmbKraal.Location = new System.Drawing.Point(288, 176);
+            this.cmbKraal.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cmbKraal.Name = "cmbKraal";
-            this.cmbKraal.Size = new System.Drawing.Size(121, 21);
+            this.cmbKraal.Size = new System.Drawing.Size(316, 39);
             this.cmbKraal.TabIndex = 14;
             // 
             // btnAddType
             // 
-            this.btnAddType.Location = new System.Drawing.Point(122, 149);
+            this.btnAddType.Location = new System.Drawing.Point(325, 355);
+            this.btnAddType.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnAddType.Name = "btnAddType";
-            this.btnAddType.Size = new System.Drawing.Size(121, 23);
+            this.btnAddType.Size = new System.Drawing.Size(323, 55);
             this.btnAddType.TabIndex = 15;
             this.btnAddType.Text = "Add Animal Type";
             this.btnAddType.UseVisualStyleBackColor = true;
@@ -161,9 +172,10 @@
             // 
             // btnAddSpecies
             // 
-            this.btnAddSpecies.Location = new System.Drawing.Point(258, 149);
+            this.btnAddSpecies.Location = new System.Drawing.Point(688, 355);
+            this.btnAddSpecies.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnAddSpecies.Name = "btnAddSpecies";
-            this.btnAddSpecies.Size = new System.Drawing.Size(121, 23);
+            this.btnAddSpecies.Size = new System.Drawing.Size(323, 55);
             this.btnAddSpecies.TabIndex = 16;
             this.btnAddSpecies.Text = "Add Species";
             this.btnAddSpecies.UseVisualStyleBackColor = true;
@@ -171,9 +183,9 @@
             // 
             // frmNew_Animal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 207);
+            this.ClientSize = new System.Drawing.Size(1307, 494);
             this.Controls.Add(this.btnAddSpecies);
             this.Controls.Add(this.btnAddType);
             this.Controls.Add(this.cmbKraal);
@@ -188,8 +200,10 @@
             this.Controls.Add(this.txtTagCode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "frmNew_Animal";
             this.Text = "Add New Animal";
+            this.Load += new System.EventHandler(this.frmNew_Animal_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

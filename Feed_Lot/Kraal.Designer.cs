@@ -32,7 +32,6 @@
             this.cmbKraal = new System.Windows.Forms.ComboBox();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.txtAnimalType = new System.Windows.Forms.TextBox();
-            this.txtSpecies = new System.Windows.Forms.TextBox();
             this.txtAvgWeight = new System.Windows.Forms.TextBox();
             this.txtTotalFeed = new System.Windows.Forms.TextBox();
             this.txtAvgFeed = new System.Windows.Forms.TextBox();
@@ -40,14 +39,13 @@
             this.lblKraal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridAnimalsInKraal = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAnimalsInKraal)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -67,6 +65,7 @@
             this.cmbKraal.Name = "cmbKraal";
             this.cmbKraal.Size = new System.Drawing.Size(121, 21);
             this.cmbKraal.TabIndex = 2;
+            this.cmbKraal.SelectedIndexChanged += new System.EventHandler(this.CmbKraal_SelectedIndexChanged);
             // 
             // txtCount
             // 
@@ -81,13 +80,6 @@
             this.txtAnimalType.Name = "txtAnimalType";
             this.txtAnimalType.Size = new System.Drawing.Size(100, 20);
             this.txtAnimalType.TabIndex = 4;
-            // 
-            // txtSpecies
-            // 
-            this.txtSpecies.Location = new System.Drawing.Point(134, 146);
-            this.txtSpecies.Name = "txtSpecies";
-            this.txtSpecies.Size = new System.Drawing.Size(100, 20);
-            this.txtSpecies.TabIndex = 5;
             // 
             // txtAvgWeight
             // 
@@ -144,15 +136,6 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Animal Type:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 150);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Animal Species:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -198,26 +181,25 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Animals in Kraal:";
             // 
-            // dataGridView1
+            // dataGridAnimalsInKraal
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(289, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(155, 273);
-            this.dataGridView1.TabIndex = 19;
+            this.dataGridAnimalsInKraal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAnimalsInKraal.Location = new System.Drawing.Point(289, 41);
+            this.dataGridAnimalsInKraal.Name = "dataGridAnimalsInKraal";
+            this.dataGridAnimalsInKraal.Size = new System.Drawing.Size(155, 273);
+            this.dataGridAnimalsInKraal.TabIndex = 19;
             // 
             // frmKraal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 389);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridAnimalsInKraal);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblKraal);
@@ -225,14 +207,14 @@
             this.Controls.Add(this.txtAvgFeed);
             this.Controls.Add(this.txtTotalFeed);
             this.Controls.Add(this.txtAvgWeight);
-            this.Controls.Add(this.txtSpecies);
             this.Controls.Add(this.txtAnimalType);
             this.Controls.Add(this.txtCount);
             this.Controls.Add(this.cmbKraal);
             this.Controls.Add(this.btnClose);
             this.Name = "frmKraal";
             this.Text = "Kraal";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmKraal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAnimalsInKraal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,7 +226,6 @@
         private System.Windows.Forms.ComboBox cmbKraal;
         private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.TextBox txtAnimalType;
-        private System.Windows.Forms.TextBox txtSpecies;
         private System.Windows.Forms.TextBox txtAvgWeight;
         private System.Windows.Forms.TextBox txtTotalFeed;
         private System.Windows.Forms.TextBox txtAvgFeed;
@@ -252,12 +233,11 @@
         private System.Windows.Forms.Label lblKraal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridAnimalsInKraal;
     }
 }

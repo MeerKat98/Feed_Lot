@@ -89,5 +89,29 @@ namespace Farm_Monitor
             conn.Close();       //Close connection.
             return outp;        //Return output variable containing the retrieved value.
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string sql = "Delete FROM ANIMAL WHERE Tag_Code ='"+txtTag.Text+"'";
+            
+            OleDbConnection conn = new OleDbConnection(constring);      //Create connection.
+            conn.Open();        //Open connection.
+            OleDbCommand command = new OleDbCommand(sql, conn);
+            OleDbDataAdapter adap = new OleDbDataAdapter();
+
+            adap.DeleteCommand = command;
+            adap.DeleteCommand.ExecuteNonQuery();
+
+            command.Dispose();
+            conn.Close();
+            //Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status
+            display("SELECT Tag_Code FROM ANIMAL");
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //OleDbCommand command = new OleDbCommand("SELECT Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status FROM ANIMAL WHERE Tag_Code = '"
+        }
     }
 }

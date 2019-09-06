@@ -59,5 +59,10 @@ namespace Farm_Monitor
         {
             this.Close();
         }
+
+        private void New_Species_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

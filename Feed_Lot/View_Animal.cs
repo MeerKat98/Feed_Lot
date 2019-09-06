@@ -13,7 +13,7 @@ namespace Farm_Monitor
 {
     public partial class frmView_Animal : Form
     {
-        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Dell\Documents\NWU\2de Jaar\CMPG 223\project\Feed_Lot\Feed_Lot\Resources\FarmMonitor.accdb;Persist Security Info=True";
+        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\dell\Desktop\Feed_Lot\FarmMonitor.accdb";
         public frmView_Animal()
         {
             InitializeComponent();

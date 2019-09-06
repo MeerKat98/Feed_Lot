@@ -13,7 +13,7 @@ namespace Farm_Monitor
 {
     public partial class frmView_Animal : Form
     {
-        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Farm_Monitor\FarmMonitor.accdb";
+        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Dell\Documents\NWU\2de Jaar\CMPG 223\project\Feed_Lot\Feed_Lot\Resources\FarmMonitor.accdb;Persist Security Info=True";
         public frmView_Animal()
         {
             InitializeComponent();
@@ -88,6 +88,30 @@ namespace Farm_Monitor
             string outp = reader[0].ToString();     //Save retrieved value in variable.
             conn.Close();       //Close connection.
             return outp;        //Return output variable containing the retrieved value.
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string sql = "Delete FROM ANIMAL WHERE Tag_Code ='"+txtTag.Text+"'";
+            
+            OleDbConnection conn = new OleDbConnection(constring);      //Create connection.
+            conn.Open();        //Open connection.
+            OleDbCommand command = new OleDbCommand(sql, conn);
+            OleDbDataAdapter adap = new OleDbDataAdapter();
+
+            adap.DeleteCommand = command;
+            adap.DeleteCommand.ExecuteNonQuery();
+
+            command.Dispose();
+            conn.Close();
+            //Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status
+            display("SELECT Tag_Code FROM ANIMAL");
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //OleDbCommand command = new OleDbCommand("SELECT Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status FROM ANIMAL WHERE Tag_Code = '"
         }
     }
 }

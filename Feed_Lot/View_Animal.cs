@@ -13,7 +13,7 @@ namespace Farm_Monitor
 {
     public partial class frmView_Animal : Form
     {
-        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\dell\Desktop\Feed_Lot\FarmMonitor.accdb";
+        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Feed_Lot\FarmMonitor.accdb";
         public frmView_Animal()
         {
             InitializeComponent();
@@ -92,7 +92,9 @@ namespace Farm_Monitor
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string sql = "Delete FROM ANIMAL WHERE Tag_Code ='"+txtTag.Text+"'";
+            int rowindex = gridViewAnimals.CurrentCell.RowIndex;
+            int columnindex = gridViewAnimals.CurrentCell.ColumnIndex;
+            string sql = "Delete FROM ANIMAL WHERE Tag_Code ='"+ Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value) + "'";
             
             OleDbConnection conn = new OleDbConnection(constring);      //Create connection.
             conn.Open();        //Open connection.

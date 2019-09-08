@@ -123,5 +123,10 @@ namespace Farm_Monitor
                 WeighAnimal.Show();
             }
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -145,5 +145,15 @@ namespace Farm_Monitor
         {
             //OleDbCommand command = new OleDbCommand("SELECT Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status FROM ANIMAL WHERE Tag_Code = '"
         }
+
+        private void GridViewAnimals_MouseHover(object sender, EventArgs e)
+        {
+            gridViewAnimals.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void GridViewAnimals_MouseLeave(object sender, EventArgs e)
+        {
+            gridViewAnimals.BorderStyle = BorderStyle.None;
+        }
     }
 }

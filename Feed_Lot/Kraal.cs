@@ -103,5 +103,15 @@ namespace Farm_Monitor
                     MessageBox.Show(ex.Message);
             }
         }
+
+        private void DataGridAnimalsInKraal_MouseEnter(object sender, EventArgs e)
+        {
+            dataGridAnimalsInKraal.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void DataGridAnimalsInKraal_MouseLeave(object sender, EventArgs e)
+        {
+            dataGridAnimalsInKraal.BorderStyle = BorderStyle.None;
+        }
     }
 }

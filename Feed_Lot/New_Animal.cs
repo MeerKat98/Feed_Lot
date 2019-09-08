@@ -30,6 +30,7 @@ namespace Farm_Monitor
         private void BtnAddAnimal_Click(object sender, EventArgs e)
         {
             Boolean gudData = true;
+            Boolean tagNotTaken = true;
             errInvalidWeight.Clear();
             errInvalidTag.Clear();
             if (txtTagCode.Text == "")
@@ -54,7 +55,21 @@ namespace Farm_Monitor
                     gudData = false;
                 }
             }
-            if (gudData)
+
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            conn.Open();
+            OleDbCommand command = new OleDbCommand("SELECT Tag_Code FROM ANIMAL", conn);
+            OleDbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader[0].ToString() == txtTagCode.Text)
+                {
+                    tagNotTaken = false;
+                    errInvalidTag.SetError(txtTagCode,"Another animal already has this tag code!");
+                }
+            }
+            conn.Close();
+            if (gudData && tagNotTaken)
             {
                 addAnimal();
             }
@@ -65,10 +80,10 @@ namespace Farm_Monitor
             
         }
       
-        public void populate(string connection, ComboBox cmb, string table, string field)
+        public void populate(ComboBox cmb, string sql, string field)
         {
-            OleDbConnection con = new OleDbConnection(connection);
-            OleDbDataAdapter adapter = new OleDbDataAdapter("Select "+ field +" from " + table, con);
+            OleDbConnection con = new OleDbConnection(connectionString);
+            OleDbDataAdapter adapter = new OleDbDataAdapter(sql, con);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             cmb.DataSource = ds.Tables[0];
@@ -162,9 +177,19 @@ namespace Farm_Monitor
 
         private void FrmNew_Animal_Load_1(object sender, EventArgs e)
         {
-            populate(connectionString, cmbKraal, "KRAAL", "Kraal_ID");
-            populate(connectionString, cmbSpecies, "SPECIES", "Description");
-            populate(connectionString, cmbAnimalType, "ANIMAL_TYPE", "Description");
+            populate(cmbKraal, "SELECT Kraal_ID FROM KRAAL", "Kraal_ID");
+        }
+
+        private void CmbKraal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbKraal.Text != "System.Data.DataRowView")
+                populate(cmbAnimalType, "SELECT Description FROM ANIMAL_TYPE WHERE Animal_Type = (SELECT Animal_Type FROM KRAAL WHERE Kraal_ID = " + cmbKraal.Text + ")", "Description");
+        }
+
+        private void CmbAnimalType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbAnimalType.Text != "System.Data.DataRowView")
+                populate(cmbSpecies, "SELECT Description FROM SPECIES", "Description");
         }
     }
 }

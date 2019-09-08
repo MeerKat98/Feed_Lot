@@ -26,7 +26,7 @@ namespace Farm_Monitor
 
         private void FrmView_Animal_Load(object sender, EventArgs e)
         {
-            display("SELECT Tag_Code FROM ANIMAL");     //Display all animals when opened.
+            display("SELECT Tag_Code FROM ANIMAL ORDER BY Tag_Code");     //Display all animals when opened.
         }
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)

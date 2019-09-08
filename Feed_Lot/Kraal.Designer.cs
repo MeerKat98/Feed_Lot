@@ -182,6 +182,7 @@
             this.dataGridAnimalsInKraal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridAnimalsInKraal.Size = new System.Drawing.Size(80, 286);
             this.dataGridAnimalsInKraal.TabIndex = 19;
+            this.dataGridAnimalsInKraal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridAnimalsInKraal_CellContentClick);
             this.dataGridAnimalsInKraal.MouseEnter += new System.EventHandler(this.DataGridAnimalsInKraal_MouseEnter);
             this.dataGridAnimalsInKraal.MouseLeave += new System.EventHandler(this.DataGridAnimalsInKraal_MouseLeave);
             // 

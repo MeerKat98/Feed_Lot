@@ -84,7 +84,7 @@ namespace Farm_Monitor
                 command = new OleDbCommand("SELECT AVG(Weight) FROM (SELECT ANIMAL.Animal_ID, ANIMAL_WEIGHT.Weight FROM ANIMAL INNER JOIN ANIMAL_WEIGHT ON ANIMAL.Animal_ID = ANIMAL_WEIGHT.Animal_ID WHERE ANIMAL.Kraal_ID = " + cmbKraal.Text + ")", con);
                 reader = command.ExecuteReader();
                 reader.Read();
-                txtAvgWeight.Text = reader[0].ToString();
+                txtAvgWeight.Text = Math.Round(Convert.ToDouble(reader[0]),2).ToString();
 
                 /*
                 OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT ANIMAL.Animal_ID, ANIMAL_WEIGHT.Weight FROM ANIMAL INNER JOIN ANIMAL_WEIGHT ON ANIMAL.Animal_ID = ANIMAL_WEIGHT.Animal_ID WHERE ANIMAL.Kraal_ID = " + cmbKraal.Text, con);
@@ -112,6 +112,11 @@ namespace Farm_Monitor
         private void DataGridAnimalsInKraal_MouseLeave(object sender, EventArgs e)
         {
             dataGridAnimalsInKraal.BorderStyle = BorderStyle.None;
+        }
+
+        private void DataGridAnimalsInKraal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTagCode = new System.Windows.Forms.TextBox();
             this.txtWeight = new System.Windows.Forms.TextBox();
@@ -47,21 +46,12 @@
             this.errInvalidWeight = new System.Windows.Forms.ErrorProvider(this.components);
             this.errInvalidAnimalType = new System.Windows.Forms.ErrorProvider(this.components);
             this.errInvalidSpecies = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errInvalidTag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errInvalidWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errInvalidAnimalType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errInvalidSpecies)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(403, 149);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 46);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // label1
             // 
@@ -75,7 +65,7 @@
             // txtTagCode
             // 
             this.txtTagCode.Location = new System.Drawing.Point(108, 19);
-            this.txtTagCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTagCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtTagCode.Name = "txtTagCode";
             this.txtTagCode.Size = new System.Drawing.Size(132, 20);
             this.txtTagCode.TabIndex = 2;
@@ -83,7 +73,7 @@
             // txtWeight
             // 
             this.txtWeight.Location = new System.Drawing.Point(108, 47);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(4);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(132, 20);
             this.txtWeight.TabIndex = 4;
@@ -130,6 +120,7 @@
             this.cmbAnimalType.Name = "cmbAnimalType";
             this.cmbAnimalType.Size = new System.Drawing.Size(121, 21);
             this.cmbAnimalType.TabIndex = 10;
+            this.cmbAnimalType.SelectedIndexChanged += new System.EventHandler(this.CmbAnimalType_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -157,6 +148,7 @@
             this.cmbKraal.Name = "cmbKraal";
             this.cmbKraal.Size = new System.Drawing.Size(121, 21);
             this.cmbKraal.TabIndex = 14;
+            this.cmbKraal.SelectedIndexChanged += new System.EventHandler(this.CmbKraal_SelectedIndexChanged);
             // 
             // btnAddType
             // 
@@ -195,6 +187,16 @@
             // 
             this.errInvalidSpecies.ContainerControl = this;
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(403, 149);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 46);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = " Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnHome_Click);
+            // 
             // frmNew_Animal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,8 +229,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTagCode;
         private System.Windows.Forms.TextBox txtWeight;
@@ -246,5 +246,6 @@
         private System.Windows.Forms.ErrorProvider errInvalidWeight;
         private System.Windows.Forms.ErrorProvider errInvalidAnimalType;
         private System.Windows.Forms.ErrorProvider errInvalidSpecies;
+        private System.Windows.Forms.Button btnClose;
     }
 }

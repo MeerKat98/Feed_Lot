@@ -50,9 +50,9 @@
             // cmbKraal
             // 
             this.cmbKraal.FormattingEnabled = true;
-            this.cmbKraal.Location = new System.Drawing.Point(121, 9);
+            this.cmbKraal.Location = new System.Drawing.Point(131, 25);
             this.cmbKraal.Name = "cmbKraal";
-            this.cmbKraal.Size = new System.Drawing.Size(121, 21);
+            this.cmbKraal.Size = new System.Drawing.Size(100, 21);
             this.cmbKraal.TabIndex = 2;
             this.cmbKraal.SelectedIndexChanged += new System.EventHandler(this.CmbKraal_SelectedIndexChanged);
             // 
@@ -101,7 +101,7 @@
             // lblKraal
             // 
             this.lblKraal.AutoSize = true;
-            this.lblKraal.Location = new System.Drawing.Point(14, 12);
+            this.lblKraal.Location = new System.Drawing.Point(13, 28);
             this.lblKraal.Name = "lblKraal";
             this.lblKraal.Size = new System.Drawing.Size(76, 13);
             this.lblKraal.TabIndex = 10;
@@ -164,7 +164,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(158, 33);
+            this.label9.Location = new System.Drawing.Point(157, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 13);
             this.label9.TabIndex = 18;
@@ -180,7 +180,7 @@
             this.dataGridAnimalsInKraal.Name = "dataGridAnimalsInKraal";
             this.dataGridAnimalsInKraal.RowHeadersVisible = false;
             this.dataGridAnimalsInKraal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridAnimalsInKraal.Size = new System.Drawing.Size(80, 315);
+            this.dataGridAnimalsInKraal.Size = new System.Drawing.Size(80, 286);
             this.dataGridAnimalsInKraal.TabIndex = 19;
             this.dataGridAnimalsInKraal.MouseEnter += new System.EventHandler(this.DataGridAnimalsInKraal_MouseEnter);
             this.dataGridAnimalsInKraal.MouseLeave += new System.EventHandler(this.DataGridAnimalsInKraal_MouseLeave);
@@ -189,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 315);
+            this.ClientSize = new System.Drawing.Size(340, 286);
             this.Controls.Add(this.dataGridAnimalsInKraal);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

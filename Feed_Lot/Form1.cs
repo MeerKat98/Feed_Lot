@@ -128,5 +128,10 @@ namespace Farm_Monitor
         {
             Application.Exit();
         }
+
+        private void BtnExit_MouseHover(object sender, EventArgs e)
+        {
+            tltCloseProg.Show("Close Program",btnExit);
+        }
     }
 }

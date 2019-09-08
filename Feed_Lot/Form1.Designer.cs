@@ -38,6 +38,7 @@
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnExit = new System.Windows.Forms.Button();
+            this.tltCloseProg = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,12 +117,17 @@
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnExit.Location = new System.Drawing.Point(758, 51);
+            this.btnExit.Location = new System.Drawing.Point(792, 34);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(70, 69);
+            this.btnExit.Size = new System.Drawing.Size(50, 50);
             this.btnExit.TabIndex = 5;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            this.btnExit.MouseHover += new System.EventHandler(this.BtnExit_MouseHover);
+            // 
+            // tltCloseProg
+            // 
+            this.tltCloseProg.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
             // 
             // frmhomePage
             // 
@@ -158,6 +164,7 @@
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem weighAnimalToolStripMenuItem;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ToolTip tltCloseProg;
     }
 }
 

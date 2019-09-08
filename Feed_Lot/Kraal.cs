@@ -81,6 +81,14 @@ namespace Farm_Monitor
                 reader.Read();
                 txtCount.Text = reader[0].ToString();
 
+                command = new OleDbCommand("SELECT AVG(Weight) FROM (SELECT ANIMAL.Animal_ID, ANIMAL_WEIGHT.Weight FROM ANIMAL INNER JOIN ANIMAL_WEIGHT ON ANIMAL.Animal_ID = ANIMAL_WEIGHT.Animal_ID WHERE ANIMAL.Kraal_ID = " + cmbKraal.Text + ")", con);
+                reader = command.ExecuteReader();
+                reader.Read();
+                txtAvgWeight.Text = reader[0].ToString();
+
+                /*
+                OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT ANIMAL.Animal_ID, ANIMAL_WEIGHT.Weight FROM ANIMAL INNER JOIN ANIMAL_WEIGHT ON ANIMAL.Animal_ID = ANIMAL_WEIGHT.Animal_ID WHERE ANIMAL.Kraal_ID = " + cmbKraal.Text, con);
+                 */
                 OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT Tag_Code FROM ANIMAL WHERE Kraal_ID = " + cmbKraal.Text, con);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "fill");
@@ -91,7 +99,8 @@ namespace Farm_Monitor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex.Message != "No value given for one or more required parameters.")
+                    MessageBox.Show(ex.Message);
             }
         }
     }

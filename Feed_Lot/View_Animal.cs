@@ -61,18 +61,34 @@ namespace Farm_Monitor
             string specie = reader[1].ToString();       //Get animal species_ID to be used later.
             txtKraal.Text = reader[2].ToString();       //Enter the animals current kraal.
             txtTag.Text = reader[3].ToString();     //Enter animals tag code.
-            DateTime arrival = Convert.ToDateTime(reader[4].ToString());     //Enter animals arrival date.
+            DateTime arrival = Convert.ToDateTime(reader[4].ToString());     //Enter animals arrival & departure date.
             if (reader[5].ToString() == "")
                 txtDepartureDate.Text = "Not Departed.";
             else
-                txtDepartureDate.Text = reader[5].ToString();      //Enter aniaml departure date.
-            txtArrivalDate.Text = Convert.ToString(arrival);
+            {
+                DateTime departure = Convert.ToDateTime(reader[5].ToString());
+                txtDepartureDate.Text = departure.ToString("yyyy/MM/dd");      //Enter aniaml departure date.
+            }
+            txtArrivalDate.Text = arrival.ToString("yyyy/MM/dd");
             txtStatus.Text = reader[6].ToString();      //Enter animals status.
             conn.Close();       //Close connection.
             txtSpecies.Text = fetchData("SELECT Description FROM SPECIES WHERE Species_ID = " + specie);        //Enter animals species description (using species_ID).
             string animal_type = fetchData("SELECT Animal_Type FROM SPECIES WHERE Species_ID = " + specie);     //Get animal_type_ID to be used later.
             txtAnimalType.Text = fetchData("SELECT Description FROM ANIMAL_TYPE WHERE Animal_Type = " + animal_type);       //Use animal_type_ID to enter animal type description.
             txtInitialWeight.Text = fetchData("SELECT Weight FROM ANIMAL_WEIGHT WHERE Date_Weighed = #" + arrival + "# AND Animal_ID = " + animal_ID);
+            txtCurrentWeight.Text = fetchData("SELECT Weight FROM ANIMAL_WEIGHT WHERE Date_Weighed = (SELECT MAX(Date_Weighed) FROM ANIMAL_WEIGHT WHERE Animal_ID = " + animal_ID + ") AND Animal_ID = " + animal_ID);
+            double gains = Convert.ToDouble(txtCurrentWeight.Text) - Convert.ToDouble(txtInitialWeight.Text);
+            txtWeightGain.Text = gains.ToString();
+            if (gains < 0)
+            {
+                lblGains.Text = "Weight Lost: ";
+                lblGains.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblGains.Text = "Weight Gained: ";
+                lblGains.ForeColor = Color.Green;
+            }
             /*
             */
         }
@@ -94,20 +110,34 @@ namespace Farm_Monitor
         {
             int rowindex = gridViewAnimals.CurrentCell.RowIndex;
             int columnindex = gridViewAnimals.CurrentCell.ColumnIndex;
-            string sql = "Delete FROM ANIMAL WHERE Tag_Code ='"+ Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value) + "'";
+            string code = Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value);
+
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete animal " + code, "Delete " + code, MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    string sql = "Delete FROM ANIMAL WHERE Tag_Code ='"+ code + "'";
             
-            OleDbConnection conn = new OleDbConnection(constring);      //Create connection.
-            conn.Open();        //Open connection.
-            OleDbCommand command = new OleDbCommand(sql, conn);
-            OleDbDataAdapter adap = new OleDbDataAdapter();
+                    OleDbConnection conn = new OleDbConnection(constring);      //Create connection.
+                    conn.Open();        //Open connection.
+                    OleDbCommand command = new OleDbCommand(sql, conn);
+                    OleDbDataAdapter adap = new OleDbDataAdapter();
 
-            adap.DeleteCommand = command;
-            adap.DeleteCommand.ExecuteNonQuery();
+                    adap.DeleteCommand = command;
+                    adap.DeleteCommand.ExecuteNonQuery();
 
-            command.Dispose();
-            conn.Close();
-            //Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status
-            display("SELECT Tag_Code FROM ANIMAL");
+                    command.Dispose();
+                    conn.Close();
+                    //Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status
+                    display("SELECT Tag_Code FROM ANIMAL");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Could not delete animal due to database error: " + ex.Message);
+                }
+            }
 
         }
 

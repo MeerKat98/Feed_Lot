@@ -37,7 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblGains = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -139,14 +139,14 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "Initail Weight: ";
             // 
-            // label8
+            // lblGains
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(287, 278);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Weight Gained:";
+            this.lblGains.AutoSize = true;
+            this.lblGains.Location = new System.Drawing.Point(287, 278);
+            this.lblGains.Name = "lblGains";
+            this.lblGains.Size = new System.Drawing.Size(81, 13);
+            this.lblGains.TabIndex = 10;
+            this.lblGains.Text = "Weight Gained:";
             // 
             // label9
             // 
@@ -177,6 +177,7 @@
             // 
             // txtTag
             // 
+            this.txtTag.Enabled = false;
             this.txtTag.Location = new System.Drawing.Point(402, 67);
             this.txtTag.Name = "txtTag";
             this.txtTag.Size = new System.Drawing.Size(114, 20);
@@ -212,6 +213,7 @@
             // 
             // txtArrivalDate
             // 
+            this.txtArrivalDate.Enabled = false;
             this.txtArrivalDate.Location = new System.Drawing.Point(402, 197);
             this.txtArrivalDate.Name = "txtArrivalDate";
             this.txtArrivalDate.Size = new System.Drawing.Size(114, 20);
@@ -219,6 +221,7 @@
             // 
             // txtInitialWeight
             // 
+            this.txtInitialWeight.Enabled = false;
             this.txtInitialWeight.Location = new System.Drawing.Point(402, 223);
             this.txtInitialWeight.Name = "txtInitialWeight";
             this.txtInitialWeight.Size = new System.Drawing.Size(114, 20);
@@ -226,6 +229,7 @@
             // 
             // txtCurrentWeight
             // 
+            this.txtCurrentWeight.Enabled = false;
             this.txtCurrentWeight.Location = new System.Drawing.Point(402, 249);
             this.txtCurrentWeight.Name = "txtCurrentWeight";
             this.txtCurrentWeight.Size = new System.Drawing.Size(114, 20);
@@ -233,6 +237,7 @@
             // 
             // txtWeightGain
             // 
+            this.txtWeightGain.Enabled = false;
             this.txtWeightGain.Location = new System.Drawing.Point(402, 275);
             this.txtWeightGain.Name = "txtWeightGain";
             this.txtWeightGain.Size = new System.Drawing.Size(114, 20);
@@ -293,7 +298,7 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblGains);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -323,7 +328,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblGains;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnEdit;

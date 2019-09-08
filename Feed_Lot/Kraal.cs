@@ -13,7 +13,7 @@ namespace Farm_Monitor
 {
     public partial class frmKraal : Form
     {
-        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Farm_Monitor\FarmMonitor.accdb";
+        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Feed_Lot\FarmMonitor.accdb";
         int animalType;
         public frmKraal()
         {
@@ -40,6 +40,12 @@ namespace Farm_Monitor
 
         private void CmbKraal_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtCount.Clear();
+            txtAnimalType.Clear();
+            txtAvgFeed.Clear();
+            txtAvgWeight.Clear();
+            txtFeedType.Clear();
+            txtTotalFeed.Clear();
             try
             {
                 OleDbConnection con = new OleDbConnection(constring);
@@ -70,16 +76,47 @@ namespace Farm_Monitor
                 reader.Read();
                 txtTotalFeed.Text = reader[0].ToString();
 
+                command = new OleDbCommand("SELECT COUNT(Tag_Code) FROM ANIMAL WHERE Kraal_ID = " + cmbKraal.Text, con);
+                reader = command.ExecuteReader();
+                reader.Read();
+                txtCount.Text = reader[0].ToString();
+
+                command = new OleDbCommand("SELECT AVG(Weight) FROM (SELECT ANIMAL.Animal_ID, ANIMAL_WEIGHT.Weight FROM ANIMAL INNER JOIN ANIMAL_WEIGHT ON ANIMAL.Animal_ID = ANIMAL_WEIGHT.Animal_ID WHERE ANIMAL.Kraal_ID = " + cmbKraal.Text + ")", con);
+                reader = command.ExecuteReader();
+                reader.Read();
+                txtAvgWeight.Text = Math.Round(Convert.ToDouble(reader[0]),2).ToString();
+
+                /*
+                OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT ANIMAL.Animal_ID, ANIMAL_WEIGHT.Weight FROM ANIMAL INNER JOIN ANIMAL_WEIGHT ON ANIMAL.Animal_ID = ANIMAL_WEIGHT.Animal_ID WHERE ANIMAL.Kraal_ID = " + cmbKraal.Text, con);
+                 */
                 OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT Tag_Code FROM ANIMAL WHERE Kraal_ID = " + cmbKraal.Text, con);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "fill");
                 dataGridAnimalsInKraal.DataSource = ds;
                 dataGridAnimalsInKraal.DataMember = "fill";
                 con.Close();
-                txtCount.Text = Convert.ToString(dataGridAnimalsInKraal.Rows.Count - 1); //Avoiding opening and closing the database too many times
                 txtAvgFeed.Text = Convert.ToString(Convert.ToInt32(txtTotalFeed.Text) / Convert.ToInt32(txtCount.Text));
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                if (ex.Message != "No value given for one or more required parameters.")
+                    MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridAnimalsInKraal_MouseEnter(object sender, EventArgs e)
+        {
+            dataGridAnimalsInKraal.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void DataGridAnimalsInKraal_MouseLeave(object sender, EventArgs e)
+        {
+            dataGridAnimalsInKraal.BorderStyle = BorderStyle.None;
+        }
+
+        private void DataGridAnimalsInKraal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

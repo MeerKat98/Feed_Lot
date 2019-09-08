@@ -123,5 +123,15 @@ namespace Farm_Monitor
                 WeighAnimal.Show();
             }
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnExit_MouseHover(object sender, EventArgs e)
+        {
+            tltCloseProg.Show("Close Program",btnExit);
+        }
     }
 }

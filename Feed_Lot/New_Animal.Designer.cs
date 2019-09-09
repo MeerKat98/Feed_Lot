@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClose = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTagCode = new System.Windows.Forms.TextBox();
             this.txtWeight = new System.Windows.Forms.TextBox();
@@ -42,17 +42,16 @@
             this.cmbKraal = new System.Windows.Forms.ComboBox();
             this.btnAddType = new System.Windows.Forms.Button();
             this.btnAddSpecies = new System.Windows.Forms.Button();
+            this.errInvalidTag = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errInvalidWeight = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errInvalidAnimalType = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errInvalidSpecies = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnClose = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.errInvalidTag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errInvalidWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errInvalidAnimalType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errInvalidSpecies)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(403, 149);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 46);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // label1
             // 
@@ -121,6 +120,7 @@
             this.cmbAnimalType.Name = "cmbAnimalType";
             this.cmbAnimalType.Size = new System.Drawing.Size(121, 21);
             this.cmbAnimalType.TabIndex = 10;
+            this.cmbAnimalType.SelectedIndexChanged += new System.EventHandler(this.CmbAnimalType_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -148,6 +148,7 @@
             this.cmbKraal.Name = "cmbKraal";
             this.cmbKraal.Size = new System.Drawing.Size(121, 21);
             this.cmbKraal.TabIndex = 14;
+            this.cmbKraal.SelectedIndexChanged += new System.EventHandler(this.CmbKraal_SelectedIndexChanged);
             // 
             // btnAddType
             // 
@@ -168,6 +169,33 @@
             this.btnAddSpecies.Text = "Add Species";
             this.btnAddSpecies.UseVisualStyleBackColor = true;
             this.btnAddSpecies.Click += new System.EventHandler(this.BtnAddSpecies_Click);
+            // 
+            // errInvalidTag
+            // 
+            this.errInvalidTag.ContainerControl = this;
+            this.errInvalidTag.Tag = "This field cannot be empty!";
+            // 
+            // errInvalidWeight
+            // 
+            this.errInvalidWeight.ContainerControl = this;
+            // 
+            // errInvalidAnimalType
+            // 
+            this.errInvalidAnimalType.ContainerControl = this;
+            // 
+            // errInvalidSpecies
+            // 
+            this.errInvalidSpecies.ContainerControl = this;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(403, 149);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 46);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = " Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // frmNew_Animal
             // 
@@ -190,14 +218,17 @@
             this.Controls.Add(this.btnClose);
             this.Name = "frmNew_Animal";
             this.Text = "Add New Animal";
+            this.Load += new System.EventHandler(this.FrmNew_Animal_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.errInvalidTag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errInvalidWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errInvalidAnimalType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errInvalidSpecies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTagCode;
         private System.Windows.Forms.TextBox txtWeight;
@@ -211,5 +242,10 @@
         private System.Windows.Forms.ComboBox cmbKraal;
         private System.Windows.Forms.Button btnAddType;
         private System.Windows.Forms.Button btnAddSpecies;
+        private System.Windows.Forms.ErrorProvider errInvalidTag;
+        private System.Windows.Forms.ErrorProvider errInvalidWeight;
+        private System.Windows.Forms.ErrorProvider errInvalidAnimalType;
+        private System.Windows.Forms.ErrorProvider errInvalidSpecies;
+        private System.Windows.Forms.Button btnClose;
     }
 }

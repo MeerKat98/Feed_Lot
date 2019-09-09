@@ -21,5 +21,10 @@ namespace Farm_Monitor
         {
             this.Close();
         }
+
+        private void BtnRecord_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWeigh_Animal));
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,9 +46,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(535, 507);
+            this.btnClose.Location = new System.Drawing.Point(201, 213);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(132, 110);
+            this.btnClose.Size = new System.Drawing.Size(50, 46);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -56,67 +58,75 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 116);
+            this.label1.Location = new System.Drawing.Point(22, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 32);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Animal ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 284);
+            this.label2.Location = new System.Drawing.Point(22, 119);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 32);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Date weighed:";
             // 
             // animaltbx
             // 
-            this.animaltbx.Location = new System.Drawing.Point(297, 100);
+            this.animaltbx.Location = new System.Drawing.Point(111, 42);
+            this.animaltbx.Margin = new System.Windows.Forms.Padding(1);
             this.animaltbx.Name = "animaltbx";
-            this.animaltbx.Size = new System.Drawing.Size(161, 38);
+            this.animaltbx.Size = new System.Drawing.Size(63, 20);
             this.animaltbx.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(300, 181);
+            this.label3.Location = new System.Drawing.Point(112, 76);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 32);
+            this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "        ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 197);
+            this.label4.Location = new System.Drawing.Point(22, 83);
+            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 32);
+            this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Weight:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(291, 181);
+            this.label5.Location = new System.Drawing.Point(109, 76);
+            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 32);
+            this.label5.Size = new System.Drawing.Size(13, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "  ";
             // 
             // weightbx
             // 
-            this.weightbx.Location = new System.Drawing.Point(297, 191);
+            this.weightbx.Location = new System.Drawing.Point(111, 80);
+            this.weightbx.Margin = new System.Windows.Forms.Padding(1);
             this.weightbx.Name = "weightbx";
-            this.weightbx.Size = new System.Drawing.Size(161, 38);
+            this.weightbx.Size = new System.Drawing.Size(63, 20);
             this.weightbx.TabIndex = 7;
             // 
             // updatebtn
             // 
-            this.updatebtn.Location = new System.Drawing.Point(125, 507);
+            this.updatebtn.Location = new System.Drawing.Point(47, 213);
+            this.updatebtn.Margin = new System.Windows.Forms.Padding(1);
             this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(132, 110);
+            this.updatebtn.Size = new System.Drawing.Size(50, 46);
             this.updatebtn.TabIndex = 8;
             this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = true;
@@ -124,25 +134,27 @@
             // 
             // datetbx
             // 
-            this.datetbx.Location = new System.Drawing.Point(297, 284);
+            this.datetbx.Location = new System.Drawing.Point(111, 119);
+            this.datetbx.Margin = new System.Windows.Forms.Padding(1);
             this.datetbx.Name = "datetbx";
-            this.datetbx.Size = new System.Drawing.Size(161, 38);
+            this.datetbx.Size = new System.Drawing.Size(63, 20);
             this.datetbx.TabIndex = 9;
             // 
             // dataGridViewWeigh
             // 
             this.dataGridViewWeigh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewWeigh.Location = new System.Drawing.Point(549, 91);
+            this.dataGridViewWeigh.Location = new System.Drawing.Point(206, 38);
+            this.dataGridViewWeigh.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridViewWeigh.Name = "dataGridViewWeigh";
             this.dataGridViewWeigh.RowTemplate.Height = 40;
-            this.dataGridViewWeigh.Size = new System.Drawing.Size(492, 365);
+            this.dataGridViewWeigh.Size = new System.Drawing.Size(184, 153);
             this.dataGridViewWeigh.TabIndex = 10;
             // 
             // frmWeigh_Animal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 820);
+            this.ClientSize = new System.Drawing.Size(423, 344);
             this.Controls.Add(this.dataGridViewWeigh);
             this.Controls.Add(this.datetbx);
             this.Controls.Add(this.updatebtn);
@@ -154,7 +166,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frmWeigh_Animal";
+            this.ShowIcon = false;
             this.Text = "Weigh_Animal";
             this.Load += new System.EventHandler(this.frmWeigh_Animal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeigh)).EndInit();

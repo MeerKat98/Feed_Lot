@@ -51,7 +51,7 @@ namespace Farm_Monitor
                 }
                 catch (Exception ex)
                 {
-                    errInvalidWeight.SetError(txtWeight, "Invalid Weight! " + ex.Message);
+                    errInvalidWeight.SetError(txtWeight, "Invalid Weight! " + ex.Message + "\nNote: Decimals should be indicated with a comma(,)");
                     gudData = false;
                 }
             }
@@ -83,12 +83,14 @@ namespace Farm_Monitor
         public void populate(ComboBox cmb, string sql, string field)
         {
             OleDbConnection con = new OleDbConnection(connectionString);
+            con.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(sql, con);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             cmb.DataSource = ds.Tables[0];
             cmb.DisplayMember = field;
             cmb.ValueMember = field;
+            con.Close();
         }
 
 
@@ -189,7 +191,7 @@ namespace Farm_Monitor
         private void CmbAnimalType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbAnimalType.Text != "System.Data.DataRowView")
-                populate(cmbSpecies, "SELECT Description FROM SPECIES", "Description");
+                populate(cmbSpecies, "SELECT Description FROM SPECIES WHERE Animal_Type = (SELECT Animal_Type FROM ANIMAL_TYPE WHERE Description = '" + cmbAnimalType.Text + "')", "Description");
         }
     }
 }

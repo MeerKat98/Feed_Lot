@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmView_Animal));
             this.gridViewAnimals = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,10 +42,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtTag = new System.Windows.Forms.TextBox();
-            this.txtAnimalType = new System.Windows.Forms.TextBox();
-            this.txtSpecies = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtKraal = new System.Windows.Forms.TextBox();
             this.txtArrivalDate = new System.Windows.Forms.TextBox();
             this.txtInitialWeight = new System.Windows.Forms.TextBox();
             this.txtCurrentWeight = new System.Windows.Forms.TextBox();
@@ -53,6 +50,14 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnConfirmEdit = new System.Windows.Forms.Button();
+            this.btnCancelEdit = new System.Windows.Forms.Button();
+            this.cmbAnimal_Type = new System.Windows.Forms.ComboBox();
+            this.cmbKraal = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbSpecies = new System.Windows.Forms.ComboBox();
+            this.btnCalendar = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAnimals)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,8 +71,9 @@
             this.gridViewAnimals.Name = "gridViewAnimals";
             this.gridViewAnimals.RowHeadersVisible = false;
             this.gridViewAnimals.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridViewAnimals.Size = new System.Drawing.Size(80, 418);
-            this.gridViewAnimals.TabIndex = 2;
+            this.gridViewAnimals.Size = new System.Drawing.Size(80, 423);
+            this.gridViewAnimals.TabIndex = 1;
+            this.gridViewAnimals.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewAnimals_CellContentClick);
             this.gridViewAnimals.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewAnimals_CellContentClick);
             this.gridViewAnimals.MouseEnter += new System.EventHandler(this.GridViewAnimals_MouseHover);
             this.gridViewAnimals.MouseLeave += new System.EventHandler(this.GridViewAnimals_MouseLeave);
@@ -165,12 +171,15 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(160, 346);
+            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEdit.Location = new System.Drawing.Point(137, 354);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 46);
-            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Size = new System.Drawing.Size(77, 46);
+            this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtTag
             // 
@@ -179,34 +188,6 @@
             this.txtTag.Name = "txtTag";
             this.txtTag.Size = new System.Drawing.Size(114, 20);
             this.txtTag.TabIndex = 14;
-            // 
-            // txtAnimalType
-            // 
-            this.txtAnimalType.Location = new System.Drawing.Point(241, 101);
-            this.txtAnimalType.Name = "txtAnimalType";
-            this.txtAnimalType.Size = new System.Drawing.Size(114, 20);
-            this.txtAnimalType.TabIndex = 15;
-            // 
-            // txtSpecies
-            // 
-            this.txtSpecies.Location = new System.Drawing.Point(241, 127);
-            this.txtSpecies.Name = "txtSpecies";
-            this.txtSpecies.Size = new System.Drawing.Size(114, 20);
-            this.txtSpecies.TabIndex = 16;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(241, 153);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(114, 20);
-            this.txtStatus.TabIndex = 17;
-            // 
-            // txtKraal
-            // 
-            this.txtKraal.Location = new System.Drawing.Point(241, 179);
-            this.txtKraal.Name = "txtKraal";
-            this.txtKraal.Size = new System.Drawing.Size(114, 20);
-            this.txtKraal.TabIndex = 18;
             // 
             // txtArrivalDate
             // 
@@ -242,19 +223,21 @@
             // 
             // txtDepartureDate
             // 
+            this.txtDepartureDate.Enabled = false;
             this.txtDepartureDate.Location = new System.Drawing.Point(241, 309);
             this.txtDepartureDate.Name = "txtDepartureDate";
             this.txtDepartureDate.Size = new System.Drawing.Size(114, 20);
-            this.txtDepartureDate.TabIndex = 23;
+            this.txtDepartureDate.TabIndex = 7;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(241, 346);
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Location = new System.Drawing.Point(218, 354);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 46);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label11
@@ -274,11 +257,107 @@
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
+            // btnConfirmEdit
+            // 
+            this.btnConfirmEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnConfirmEdit.Enabled = false;
+            this.btnConfirmEdit.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmEdit.ForeColor = System.Drawing.Color.Green;
+            this.btnConfirmEdit.Location = new System.Drawing.Point(137, 354);
+            this.btnConfirmEdit.Name = "btnConfirmEdit";
+            this.btnConfirmEdit.Size = new System.Drawing.Size(156, 46);
+            this.btnConfirmEdit.TabIndex = 8;
+            this.btnConfirmEdit.Text = "Confirm Edit";
+            this.btnConfirmEdit.UseVisualStyleBackColor = false;
+            this.btnConfirmEdit.Visible = false;
+            this.btnConfirmEdit.Click += new System.EventHandler(this.BtnConfirmEdit_Click);
+            // 
+            // btnCancelEdit
+            // 
+            this.btnCancelEdit.BackColor = System.Drawing.Color.Salmon;
+            this.btnCancelEdit.Enabled = false;
+            this.btnCancelEdit.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelEdit.ForeColor = System.Drawing.Color.Red;
+            this.btnCancelEdit.Location = new System.Drawing.Point(300, 354);
+            this.btnCancelEdit.Name = "btnCancelEdit";
+            this.btnCancelEdit.Size = new System.Drawing.Size(50, 46);
+            this.btnCancelEdit.TabIndex = 9;
+            this.btnCancelEdit.Text = "Cancel Edit";
+            this.btnCancelEdit.UseVisualStyleBackColor = false;
+            this.btnCancelEdit.Visible = false;
+            this.btnCancelEdit.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // cmbAnimal_Type
+            // 
+            this.cmbAnimal_Type.Enabled = false;
+            this.cmbAnimal_Type.FormattingEnabled = true;
+            this.cmbAnimal_Type.Location = new System.Drawing.Point(241, 101);
+            this.cmbAnimal_Type.Name = "cmbAnimal_Type";
+            this.cmbAnimal_Type.Size = new System.Drawing.Size(114, 21);
+            this.cmbAnimal_Type.TabIndex = 3;
+            // 
+            // cmbKraal
+            // 
+            this.cmbKraal.Enabled = false;
+            this.cmbKraal.FormattingEnabled = true;
+            this.cmbKraal.Location = new System.Drawing.Point(241, 179);
+            this.cmbKraal.Name = "cmbKraal";
+            this.cmbKraal.Size = new System.Drawing.Size(114, 21);
+            this.cmbKraal.TabIndex = 6;
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.Enabled = false;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(241, 153);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(114, 21);
+            this.cmbStatus.TabIndex = 5;
+            // 
+            // cmbSpecies
+            // 
+            this.cmbSpecies.Enabled = false;
+            this.cmbSpecies.FormattingEnabled = true;
+            this.cmbSpecies.Location = new System.Drawing.Point(241, 127);
+            this.cmbSpecies.Name = "cmbSpecies";
+            this.cmbSpecies.Size = new System.Drawing.Size(114, 21);
+            this.cmbSpecies.TabIndex = 4;
+            this.cmbSpecies.SelectedIndexChanged += new System.EventHandler(this.CmbSpecies_SelectedIndexChanged);
+            // 
+            // btnCalendar
+            // 
+            this.btnCalendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCalendar.BackgroundImage")));
+            this.btnCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCalendar.Enabled = false;
+            this.btnCalendar.Location = new System.Drawing.Point(361, 306);
+            this.btnCalendar.Name = "btnCalendar";
+            this.btnCalendar.Size = new System.Drawing.Size(39, 34);
+            this.btnCalendar.TabIndex = 26;
+            this.btnCalendar.UseVisualStyleBackColor = true;
+            this.btnCalendar.Click += new System.EventHandler(this.BtnCalendar_Click);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(185, 257);
+            this.monthCalendar1.MaxSelectionCount = 1;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 27;
+            this.monthCalendar1.Visible = false;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar1_DateSelected);
+            // 
             // frmView_Animal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 418);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(412, 423);
+            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.btnCalendar);
+            this.Controls.Add(this.cmbSpecies);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.cmbKraal);
+            this.Controls.Add(this.cmbAnimal_Type);
+            this.Controls.Add(this.btnCancelEdit);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnDelete);
@@ -287,12 +366,7 @@
             this.Controls.Add(this.txtCurrentWeight);
             this.Controls.Add(this.txtInitialWeight);
             this.Controls.Add(this.txtArrivalDate);
-            this.Controls.Add(this.txtKraal);
-            this.Controls.Add(this.txtStatus);
-            this.Controls.Add(this.txtSpecies);
-            this.Controls.Add(this.txtAnimalType);
             this.Controls.Add(this.txtTag);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblGains);
@@ -304,6 +378,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridViewAnimals);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnConfirmEdit);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmView_Animal";
             this.ShowIcon = false;
             this.Text = "View Animal Details";
@@ -328,10 +406,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtTag;
-        private System.Windows.Forms.TextBox txtAnimalType;
-        private System.Windows.Forms.TextBox txtSpecies;
-        private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.TextBox txtKraal;
         private System.Windows.Forms.TextBox txtArrivalDate;
         private System.Windows.Forms.TextBox txtInitialWeight;
         private System.Windows.Forms.TextBox txtCurrentWeight;
@@ -342,6 +416,14 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtAnimal_ID;
+        private System.Windows.Forms.Button btnConfirmEdit;
+        private System.Windows.Forms.Button btnCancelEdit;
+        private System.Windows.Forms.ComboBox cmbAnimal_Type;
+        private System.Windows.Forms.ComboBox cmbKraal;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox cmbSpecies;
+        private System.Windows.Forms.Button btnCalendar;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
            /*

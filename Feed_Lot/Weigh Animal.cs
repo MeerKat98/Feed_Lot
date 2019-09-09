@@ -13,7 +13,7 @@ namespace Farm_Monitor
 {
     public partial class frmWeigh_Animal : Form
     {
-        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\dell\Desktop\Feed_Lot\FarmMonitor.accdb";
+        string constring = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Feed_Lot\FarmMonitor.accdb";
         public frmWeigh_Animal()
         {
             InitializeComponent();

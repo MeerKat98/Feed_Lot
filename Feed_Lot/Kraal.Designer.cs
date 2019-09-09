@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKraal));
             this.cmbKraal = new System.Windows.Forms.ComboBox();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.txtAnimalType = new System.Windows.Forms.TextBox();
@@ -207,6 +208,7 @@
             this.Controls.Add(this.txtAnimalType);
             this.Controls.Add(this.txtCount);
             this.Controls.Add(this.cmbKraal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmKraal";
             this.ShowIcon = false;
             this.Text = "Kraal";

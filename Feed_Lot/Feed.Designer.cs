@@ -106,6 +106,7 @@
             this.btnRecord.TabIndex = 10;
             this.btnRecord.Text = "Record Feed";
             this.btnRecord.UseVisualStyleBackColor = true;
+            this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
             // frmFeedAnimals
             // 

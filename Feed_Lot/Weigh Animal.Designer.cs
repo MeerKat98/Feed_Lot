@@ -31,14 +31,16 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.animaltbx = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.weightbx = new System.Windows.Forms.TextBox();
             this.updatebtn = new System.Windows.Forms.Button();
             this.datetbx = new System.Windows.Forms.TextBox();
+            this.dataGridViewWeigh = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeigh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -69,12 +71,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Date weighed:";
             // 
-            // textBox1
+            // animaltbx
             // 
-            this.textBox1.Location = new System.Drawing.Point(297, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 38);
-            this.textBox1.TabIndex = 3;
+            this.animaltbx.Location = new System.Drawing.Point(297, 100);
+            this.animaltbx.Name = "animaltbx";
+            this.animaltbx.Size = new System.Drawing.Size(161, 38);
+            this.animaltbx.TabIndex = 3;
             // 
             // label3
             // 
@@ -103,12 +105,12 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "  ";
             // 
-            // textBox2
+            // weightbx
             // 
-            this.textBox2.Location = new System.Drawing.Point(297, 191);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 38);
-            this.textBox2.TabIndex = 7;
+            this.weightbx.Location = new System.Drawing.Point(297, 191);
+            this.weightbx.Name = "weightbx";
+            this.weightbx.Size = new System.Drawing.Size(161, 38);
+            this.weightbx.TabIndex = 7;
             // 
             // updatebtn
             // 
@@ -127,24 +129,35 @@
             this.datetbx.Size = new System.Drawing.Size(161, 38);
             this.datetbx.TabIndex = 9;
             // 
+            // dataGridViewWeigh
+            // 
+            this.dataGridViewWeigh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewWeigh.Location = new System.Drawing.Point(549, 91);
+            this.dataGridViewWeigh.Name = "dataGridViewWeigh";
+            this.dataGridViewWeigh.RowTemplate.Height = 40;
+            this.dataGridViewWeigh.Size = new System.Drawing.Size(492, 365);
+            this.dataGridViewWeigh.TabIndex = 10;
+            // 
             // frmWeigh_Animal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 679);
+            this.ClientSize = new System.Drawing.Size(1127, 820);
+            this.Controls.Add(this.dataGridViewWeigh);
             this.Controls.Add(this.datetbx);
             this.Controls.Add(this.updatebtn);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.weightbx);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.animaltbx);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Name = "frmWeigh_Animal";
             this.Text = "Weigh_Animal";
             this.Load += new System.EventHandler(this.frmWeigh_Animal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeigh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,13 +168,14 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox animaltbx;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox weightbx;
         private System.Windows.Forms.Button updatebtn;
         private System.Windows.Forms.TextBox datetbx;
+        private System.Windows.Forms.DataGridView dataGridViewWeigh;
     }
 }

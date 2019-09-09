@@ -111,6 +111,8 @@ namespace Farm_Monitor
             int rowindex = gridViewAnimals.CurrentCell.RowIndex;
             int columnindex = gridViewAnimals.CurrentCell.ColumnIndex;
             string code = Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value);
+            string sql2 = "Delete FROM ANIMAL WHERE Tag_Code ='" + Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value) + "'";
+            string sql1 = "Delete FROM ANIMAL_WEIGHT WHERE Date_Weighed = #" + txtArrivalDate.Text + "# AND  Animal_ID = " + txtAnimal_ID.Text+"AND Weight = "+txtInitialWeight.Text;
 
 
             DialogResult result = MessageBox.Show("Are you sure you want to delete animal " + code, "Delete " + code, MessageBoxButtons.OKCancel);
@@ -143,7 +145,25 @@ namespace Farm_Monitor
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //OleDbCommand command = new OleDbCommand("SELECT Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status FROM ANIMAL WHERE Tag_Code = '"
+            int rowindex = gridViewAnimals.CurrentCell.RowIndex;
+            int columnindex = gridViewAnimals.CurrentCell.ColumnIndex;
+            string sql1 = "UPDATE FarmMonitor SET Animal_ID = '"+txtAnimal_ID.Text+"' ,Species_ID  = '" + txtSpecies.Text+ "',Kraal_ID = '"+txtKraal.Text+ "',Tag_Code = '"+txtTag.Text+ "',Arrival_Date = '"+txtArrivalDate.Text+ "',Departure_Date = '"+txtDepartureDate.Text+"',Status = '"+txtStatus.Text+"' WHERE Tag_Code = '" + Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value) + "'";
+            //Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status
+
+
+            OleDbConnection conn = new OleDbConnection(constring);      //Create connection.
+            conn.Open();        //Open connection.
+            OleDbCommand command = new OleDbCommand(sql1, conn);
+            OleDbDataAdapter adap = new OleDbDataAdapter();
+
+            adap.UpdateCommand = command;
+            adap.UpdateCommand.ExecuteNonQuery();
+
+            command.Dispose();
+            conn.Close();
+            //Animal_ID, Species_ID, Kraal_ID, Tag_Code, Arrival_Date, Departure_Date, Status
+            /* "SELECT Weight FROM ANIMAL_WEIGHT WHERE Date_Weighed = #" + txtArrivalDate.Text + "# AND Animal_ID = " + */
+            display("SELECT Tag_Code FROM ANIMAL");
         }
 
         private void GridViewAnimals_MouseHover(object sender, EventArgs e)

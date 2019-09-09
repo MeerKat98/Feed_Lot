@@ -79,7 +79,6 @@ namespace Farm_Monitor.Properties {
                 return ((byte[])(obj));
             }
         }
-        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>

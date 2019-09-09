@@ -340,5 +340,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtAnimal_ID;
     }
 }
+           /*
+            */

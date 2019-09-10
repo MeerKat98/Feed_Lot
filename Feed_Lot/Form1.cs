@@ -136,7 +136,9 @@ namespace Farm_Monitor
 
         private void FrmhomePage_Load(object sender, EventArgs e)
         {
-
+            loadingScreen frmLoad = new loadingScreen();
+            frmLoad.ShowDialog();
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

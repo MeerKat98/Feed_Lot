@@ -22,11 +22,6 @@ namespace Farm_Monitor
             InitializeComponent();
         }
 
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void BtnAddAnimal_Click(object sender, EventArgs e)
         {
             Boolean gudData = true;

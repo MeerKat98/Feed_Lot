@@ -103,6 +103,16 @@ namespace Farm_Monitor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap NinjaDevs {
+            get {
+                object obj = ResourceManager.GetObject("NinjaDevs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Pattern3 {
             get {
                 object obj = ResourceManager.GetObject("Pattern3", resourceCulture);

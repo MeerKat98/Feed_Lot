@@ -47,7 +47,6 @@
             this.errInvalidWeight = new System.Windows.Forms.ErrorProvider(this.components);
             this.errInvalidAnimalType = new System.Windows.Forms.ErrorProvider(this.components);
             this.errInvalidSpecies = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errInvalidTag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errInvalidWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errInvalidAnimalType)).BeginInit();
@@ -157,11 +156,11 @@
             this.btnAddAnimal.BackColor = System.Drawing.Color.Silver;
             this.btnAddAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddAnimal.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAnimal.Location = new System.Drawing.Point(15, 149);
+            this.btnAddAnimal.Location = new System.Drawing.Point(68, 138);
             this.btnAddAnimal.Name = "btnAddAnimal";
-            this.btnAddAnimal.Size = new System.Drawing.Size(75, 46);
+            this.btnAddAnimal.Size = new System.Drawing.Size(121, 52);
             this.btnAddAnimal.TabIndex = 13;
-            this.btnAddAnimal.Text = "Add";
+            this.btnAddAnimal.Text = "Add Animal";
             this.btnAddAnimal.UseVisualStyleBackColor = false;
             this.btnAddAnimal.Click += new System.EventHandler(this.BtnAddAnimal_Click);
             // 
@@ -180,7 +179,7 @@
             this.btnAddType.BackColor = System.Drawing.Color.Silver;
             this.btnAddType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddType.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddType.Location = new System.Drawing.Point(122, 149);
+            this.btnAddType.Location = new System.Drawing.Point(275, 138);
             this.btnAddType.Name = "btnAddType";
             this.btnAddType.Size = new System.Drawing.Size(121, 23);
             this.btnAddType.TabIndex = 15;
@@ -193,7 +192,7 @@
             this.btnAddSpecies.BackColor = System.Drawing.Color.Silver;
             this.btnAddSpecies.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddSpecies.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSpecies.Location = new System.Drawing.Point(258, 149);
+            this.btnAddSpecies.Location = new System.Drawing.Point(275, 167);
             this.btnAddSpecies.Name = "btnAddSpecies";
             this.btnAddSpecies.Size = new System.Drawing.Size(121, 23);
             this.btnAddSpecies.TabIndex = 16;
@@ -218,19 +217,6 @@
             // 
             this.errInvalidSpecies.ContainerControl = this;
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Silver;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(403, 149);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 46);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = " Close";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.BtnHome_Click);
-            // 
             // frmNew_Animal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,7 +237,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTagCode);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnClose);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNew_Animal";
             this.Text = "Add New Animal";
@@ -283,6 +268,5 @@
         private System.Windows.Forms.ErrorProvider errInvalidWeight;
         private System.Windows.Forms.ErrorProvider errInvalidAnimalType;
         private System.Windows.Forms.ErrorProvider errInvalidSpecies;
-        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -202,6 +202,7 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Silver;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnEdit.Location = new System.Drawing.Point(137, 354);
@@ -269,6 +270,7 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Silver;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(218, 354);
             this.btnDelete.Name = "btnDelete";
@@ -303,6 +305,7 @@
             // 
             this.btnConfirmEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnConfirmEdit.Enabled = false;
+            this.btnConfirmEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfirmEdit.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmEdit.ForeColor = System.Drawing.Color.Green;
             this.btnConfirmEdit.Location = new System.Drawing.Point(137, 354);
@@ -318,6 +321,7 @@
             // 
             this.btnCancelEdit.BackColor = System.Drawing.Color.Salmon;
             this.btnCancelEdit.Enabled = false;
+            this.btnCancelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelEdit.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelEdit.ForeColor = System.Drawing.Color.Red;
             this.btnCancelEdit.Location = new System.Drawing.Point(300, 354);
@@ -386,6 +390,7 @@
             this.btnCalendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCalendar.BackgroundImage")));
             this.btnCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCalendar.Enabled = false;
+            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalendar.Location = new System.Drawing.Point(361, 306);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.Size = new System.Drawing.Size(39, 34);

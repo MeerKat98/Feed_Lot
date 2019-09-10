@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Farm_Monitor.Properties.Resources._42_60149484;
+            this.BackgroundImage = global::Farm_Monitor.Properties.Resources.nastockLogo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(842, 513);
             this.Controls.Add(this.btnExit);

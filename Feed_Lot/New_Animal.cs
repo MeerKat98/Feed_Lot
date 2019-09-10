@@ -117,11 +117,9 @@ namespace Farm_Monitor
             DateTime dateOnly = dt.Date;
 
             //Inserting of animal with details into Animal Table
-            string cmdQuery = "INSERT INTO ANIMAL (Species_ID,Kraal_ID,Tag_Code,Arrival_Date,Status) VALUES (@Species_ID,@Kraal_ID,@Tag_Code,@Arrival_Date,@Status)";
-            
+            string cmdQuery = "INSERT INTO ANIMAL (Species_ID,Kraal_ID,Tag_Code,Arrival_Date,Status) VALUES (@Species_ID,@Kraal_ID,@Tag_Code,@Arrival_Date,@Status)";            
             //Inserting of animal weight and weighed date with animal_id generated with cmdQuery1
             string cmdQuery2 = "INSERT INTO ANIMAL_WEIGHT (Animal_ID,Date_Weighed,Weight) VALUES (@Animal_ID,@Date_Weighed,@Weight)";
-
             using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
                 using (OleDbCommand cmd = new OleDbCommand(cmdQuery, connection))

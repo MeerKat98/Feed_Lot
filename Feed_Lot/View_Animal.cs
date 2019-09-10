@@ -112,9 +112,6 @@ namespace Farm_Monitor
             int rowindex = gridViewAnimals.CurrentCell.RowIndex;
             int columnindex = gridViewAnimals.CurrentCell.ColumnIndex;
             string code = Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value);
-           // string sql2 = "Delete FROM ANIMAL WHERE Tag_Code ='" + Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value) + "'";
-            //string sql1 = "Delete FROM ANIMAL_WEIGHT WHERE Date_Weighed = #" + txtArrivalDate.Text + "# AND  Animal_ID = " + txtAnimal_ID.Text+"AND Weight = "+txtInitialWeight.Text;
-
 
             DialogResult result = MessageBox.Show("Are you sure you want to delete animal " + code, "Delete " + code, MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
@@ -232,9 +229,11 @@ namespace Farm_Monitor
                 string code = Convert.ToString(gridViewAnimals.Rows[rowindex].Cells[columnindex].Value);
                 string species = fetchData("SELECT Species_ID FROM SPECIES WHERE Description = '" + cmbSpecies.Text + "'");
                 if (DateTime.TryParse(txtDepartureDate.Text, out date))
-                    sql1 = "UPDATE ANIMAL SET Kraal_ID = " + cmbKraal.Text + ", Status = '" + cmbStatus.Text + "', Species_ID = '" + species + "', Departure_Date = '" + txtDepartureDate.Text + "' WHERE Tag_Code = '" + code + "'";
+                    sql1 = "UPDATE ANIMAL SET Kraal_ID = " + cmbKraal.Text + ", Status = '" + cmbStatus.Text + "', Species_ID = '" + species + "', " +
+                        "Departure_Date = '" + txtDepartureDate.Text + "' WHERE Tag_Code = '" + code + "'";
                 else
-                    sql1 = "UPDATE ANIMAL SET Kraal_ID = " + cmbKraal.Text + ", Status = '" + cmbStatus.Text + "', Species_ID = '" + species + "' WHERE Tag_Code = '" + code + "'";
+                    sql1 = "UPDATE ANIMAL SET Kraal_ID = " + cmbKraal.Text + ", Status = '" + cmbStatus.Text + "', Species_ID = '" + species + "' " +
+                        "WHERE Tag_Code = '" + code + "'";
                 //Update date
                 OleDbConnection conn = new OleDbConnection(constring);      //Create connection.
                 conn.Open();        //Open connection.

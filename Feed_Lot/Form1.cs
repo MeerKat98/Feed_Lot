@@ -138,6 +138,7 @@ namespace Farm_Monitor
         {
             loadingScreen frmLoad = new loadingScreen();
             frmLoad.ShowDialog();
+            System.Threading.Thread.Sleep(500);
             this.WindowState = FormWindowState.Maximized;
         }
     }

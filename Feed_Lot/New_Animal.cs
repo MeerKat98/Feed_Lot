@@ -28,6 +28,7 @@ namespace Farm_Monitor
             Boolean tagNotTaken = true;
             errInvalidWeight.Clear();
             errInvalidTag.Clear();
+            errInvalidAnimalType.Clear();
             if (txtTagCode.Text == "")
             {
                 errInvalidTag.SetError(txtTagCode,"This field cannot be empty!");
@@ -93,15 +94,17 @@ namespace Farm_Monitor
         {
             New_Animal_Type childForm = new New_Animal_Type();
             childForm.ShowDialog(this);
+            populate(cmbAnimalType, "SELECT Description FROM ANIMAL_TYPE ORDER BY Description", "Description");
         }
 
         private void BtnAddSpecies_Click(object sender, EventArgs e)
         {
             New_Species childForm = new New_Species();
             childForm.ShowDialog(this);
+            populate(cmbSpecies, "SELECT Description FROM SPECIES WHERE Animal_Type = (SELECT Animal_Type FROM ANIMAL_TYPE WHERE Description = '" + cmbAnimalType.Text + "')", "Description");
         }
 
-        
+
         public void addAnimal()
         {   //Error code values 
             int cmdError = 1;
@@ -115,76 +118,112 @@ namespace Farm_Monitor
             string cmdQuery = "INSERT INTO ANIMAL (Species_ID,Kraal_ID,Tag_Code,Arrival_Date,Status) VALUES (@Species_ID,@Kraal_ID,@Tag_Code,@Arrival_Date,@Status)";            
             //Inserting of animal weight and weighed date with animal_id generated with cmdQuery1
             string cmdQuery2 = "INSERT INTO ANIMAL_WEIGHT (Animal_ID,Date_Weighed,Weight) VALUES (@Animal_ID,@Date_Weighed,@Weight)";
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
-            {
-                using (OleDbCommand cmd = new OleDbCommand(cmdQuery, connection))
-                {
-                    try{
-                        connection.Open();
-                        OleDbCommand command = new OleDbCommand("SELECT Species_ID FROM SPECIES WHERE Description ='" + cmbSpecies.Text + "'", connection);
-                        OleDbDataReader reader = command.ExecuteReader();
-                        reader.Read();
 
-                        cmd.Parameters.AddWithValue("@Species_ID", reader[0]);
-                        cmd.Parameters.AddWithValue("@Kraal_ID", cmbKraal.Text);
-                        cmd.Parameters.AddWithValue("@Tag_Code", txtTagCode.Text);
-                        cmd.Parameters.AddWithValue("@Arrival_Date", dateOnly.ToString("yyyy/MM/dd"));
-                        cmd.Parameters.AddWithValue("@Status", "ALIVE");
-                        cmd.ExecuteNonQuery();
-                        connection.Close();
-                    }
-                    catch (Exception ex){
-                        Console.Out.WriteLine("Database Connection Error code:" + ex);
-                    } 
-                }
-                using(OleDbCommand cmd = new OleDbCommand(cmdQuery2, connection))
+            if (cmbKraal.Text == "")
+            {
+                DialogResult result = MessageBox.Show("There is no kraal allocated for this animal type. Would you like the system to create a new kraal for " + cmbAnimalType.Text + "?", "No Kraal for " + cmbAnimalType.Text, MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
                     try
                     {
-                        connection.Open();
-                        OleDbCommand command = new OleDbCommand("SELECT Animal_ID FROM ANIMAL WHERE Tag_Code ='" + txtTagCode.Text + "'", connection);
-                        OleDbDataReader reader = command.ExecuteReader();
-                        reader.Read();
-
-
-                        cmd.Parameters.AddWithValue("@Animal_ID", reader[0]);
-                        cmd.Parameters.AddWithValue("@Weighed_Date", dateOnly.ToString("yyyy/MM/dd"));
-                        cmd.Parameters.AddWithValue("@Weight", txtWeight.Text);
-                        cmd.ExecuteNonQuery();
-                        connection.Close();
+                        OleDbConnection conn = new OleDbConnection(connectionString);
+                        conn.Open();
+                        OleDbCommand commandKraal = new OleDbCommand("SELECT Animal_Type FROM ANIMAL_Type WHERE Description = '" + cmbAnimalType.Text + "'", conn);
+                        OleDbDataReader readerKraal = commandKraal.ExecuteReader();
+                        readerKraal.Read();
+                        string animalType = readerKraal[0].ToString();
+                        commandKraal = new OleDbCommand("INSERT INTO KRAAL (Animal_Type) VALUES (@Animal_Type)", conn);
+                        commandKraal.Parameters.AddWithValue("@Animal_Type", animalType);
+                        commandKraal.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Kraal created succesfully");
+                        populate(cmbKraal, "SELECT Kraal_ID FROM KRAAL WHERE Animal_Type = (SELECT Animal_Type FROM ANIMAL_TYPE WHERE description = '" + cmbAnimalType.Text + "')", "Kraal_ID");
                     }
                     catch (Exception ex)
                     {
-                        Console.Out.WriteLine("Database Connection Error code:" + ex);
-                    }  
+                        MessageBox.Show("Could not create new kraal due to an error :" + ex.Message);
+                    }
                 }
             }
-            if (cmdError > 0)
-                MessageBox.Show("Success, Animal has been addded to the database.");
+
+            if (cmbKraal.Text == "")
+                errInvalidAnimalType.SetError(cmbKraal, "This field cannot be empty!");
             else
-                MessageBox.Show("Failed, Animal could not be added to database.\nPlease check database availabilty and privileges");
-            txtTagCode.Clear();
-            txtWeight.Clear();
-            cmbAnimalType.SelectedIndex = 0;
-            cmbKraal.SelectedIndex = 0;
-            cmbSpecies.SelectedIndex = 0;
+            {
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    using (OleDbCommand cmd = new OleDbCommand(cmdQuery, connection))
+                    {
+                        try{
+                            connection.Open();
+                            OleDbCommand command = new OleDbCommand("SELECT Species_ID FROM SPECIES WHERE Description ='" + cmbSpecies.Text + "'", connection);
+                            OleDbDataReader reader = command.ExecuteReader();
+                            reader.Read();
+
+                            cmd.Parameters.AddWithValue("@Species_ID", reader[0]);
+                            cmd.Parameters.AddWithValue("@Kraal_ID", cmbKraal.Text);
+                            cmd.Parameters.AddWithValue("@Tag_Code", txtTagCode.Text);
+                            cmd.Parameters.AddWithValue("@Arrival_Date", dateOnly.ToString("yyyy/MM/dd"));
+                            cmd.Parameters.AddWithValue("@Status", "ALIVE");
+                            cmd.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                        catch (Exception ex){
+                            Console.Out.WriteLine("Database Connection Error code:" + ex);
+                        } 
+                    }
+                    using(OleDbCommand cmd = new OleDbCommand(cmdQuery2, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            OleDbCommand command = new OleDbCommand("SELECT Animal_ID FROM ANIMAL WHERE Tag_Code ='" + txtTagCode.Text + "'", connection);
+                            OleDbDataReader reader = command.ExecuteReader();
+                            reader.Read();
+
+
+                            cmd.Parameters.AddWithValue("@Animal_ID", reader[0]);
+                            cmd.Parameters.AddWithValue("@Weighed_Date", dateOnly.ToString("yyyy/MM/dd"));
+                            cmd.Parameters.AddWithValue("@Weight", txtWeight.Text);
+                            cmd.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.Out.WriteLine("Database Connection Error code:" + ex);
+                        }  
+                    }
+                }
+                if (cmdError > 0)
+                    MessageBox.Show("Success, Animal has been addded to the database.");
+                else
+                    MessageBox.Show("Failed, Animal could not be added to database.\nPlease check database availabilty and privileges");
+                txtTagCode.Clear();
+                txtWeight.Clear();
+                cmbAnimalType.SelectedIndex = 0;
+                cmbKraal.SelectedIndex = 0;
+                cmbSpecies.SelectedIndex = 0;
+            }
         }
 
         private void FrmNew_Animal_Load_1(object sender, EventArgs e)
         {
-            populate(cmbKraal, "SELECT Kraal_ID FROM KRAAL", "Kraal_ID");
+            populate(cmbAnimalType, "SELECT Description FROM ANIMAL_TYPE ORDER BY Description", "Description");
         }
 
         private void CmbKraal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbKraal.Text != "System.Data.DataRowView")
-                populate(cmbAnimalType, "SELECT Description FROM ANIMAL_TYPE WHERE Animal_Type = (SELECT Animal_Type FROM KRAAL WHERE Kraal_ID = " + cmbKraal.Text + ")", "Description");
+
         }
 
         private void CmbAnimalType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbAnimalType.Text != "System.Data.DataRowView")
+            {
+                cmbKraal.Text = "";
+                populate(cmbKraal, "SELECT Kraal_ID FROM KRAAL WHERE Animal_Type = (SELECT Animal_Type FROM ANIMAL_TYPE WHERE description = '" + cmbAnimalType.Text + "')", "Kraal_ID");
                 populate(cmbSpecies, "SELECT Description FROM SPECIES WHERE Animal_Type = (SELECT Animal_Type FROM ANIMAL_TYPE WHERE Description = '" + cmbAnimalType.Text + "')", "Description");
+            }
         }
     }
 }

@@ -100,7 +100,7 @@
             // 
             this.cmbSpecies.BackColor = System.Drawing.Color.Silver;
             this.cmbSpecies.FormattingEnabled = true;
-            this.cmbSpecies.Location = new System.Drawing.Point(326, 101);
+            this.cmbSpecies.Location = new System.Drawing.Point(327, 73);
             this.cmbSpecies.Name = "cmbSpecies";
             this.cmbSpecies.Size = new System.Drawing.Size(121, 21);
             this.cmbSpecies.TabIndex = 6;
@@ -111,7 +111,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(272, 104);
+            this.label3.Location = new System.Drawing.Point(273, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 14);
             this.label3.TabIndex = 7;
@@ -123,7 +123,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(23, 104);
+            this.label4.Location = new System.Drawing.Point(24, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 14);
             this.label4.TabIndex = 8;
@@ -133,7 +133,7 @@
             // 
             this.cmbAnimalType.BackColor = System.Drawing.Color.Silver;
             this.cmbAnimalType.FormattingEnabled = true;
-            this.cmbAnimalType.Location = new System.Drawing.Point(108, 101);
+            this.cmbAnimalType.Location = new System.Drawing.Point(109, 73);
             this.cmbAnimalType.Name = "cmbAnimalType";
             this.cmbAnimalType.Size = new System.Drawing.Size(121, 21);
             this.cmbAnimalType.TabIndex = 10;
@@ -145,7 +145,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(23, 77);
+            this.label5.Location = new System.Drawing.Point(23, 103);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 14);
             this.label5.TabIndex = 11;
@@ -168,7 +168,7 @@
             // 
             this.cmbKraal.BackColor = System.Drawing.Color.Silver;
             this.cmbKraal.FormattingEnabled = true;
-            this.cmbKraal.Location = new System.Drawing.Point(108, 74);
+            this.cmbKraal.Location = new System.Drawing.Point(108, 100);
             this.cmbKraal.Name = "cmbKraal";
             this.cmbKraal.Size = new System.Drawing.Size(121, 21);
             this.cmbKraal.TabIndex = 14;

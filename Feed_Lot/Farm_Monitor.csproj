@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Farm_Monitor</RootNamespace>
     <AssemblyName>Farm_Monitor</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -91,6 +92,12 @@
     <Compile Include="View_Animal.Designer.cs">
       <DependentUpon>View_Animal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Weigh Animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Weigh Animal.Designer.cs">
+      <DependentUpon>Weigh Animal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Feed.resx">
       <DependentUpon>Feed.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +129,9 @@
     <EmbeddedResource Include="View_Animal.resx">
       <DependentUpon>View_Animal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Weigh Animal.resx">
+      <DependentUpon>Weigh Animal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,6 +152,15 @@
     <None Include="Resources\FarmMonitor.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pattern3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nastockLogo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

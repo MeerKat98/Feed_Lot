@@ -101,5 +101,42 @@ namespace Farm_Monitor
                     feed.Show();
                 }
         }
+
+        private void weighAnimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "Weigh_Animal")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+
+            if (IsOpen == false)
+            {
+                frmWeigh_Animal  WeighAnimal = new frmWeigh_Animal();
+                WeighAnimal.MdiParent = this;
+                WeighAnimal.Show();
+            }
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnExit_MouseHover(object sender, EventArgs e)
+        {
+            tltCloseProg.Show("Close Program",btnExit);
+        }
+
+        private void FrmhomePage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

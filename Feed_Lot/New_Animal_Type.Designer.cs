@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_Animal_Type));
             this.txtTypeName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddAnimal = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTypeName
             // 
+            this.txtTypeName.BackColor = System.Drawing.Color.Silver;
             this.txtTypeName.Location = new System.Drawing.Point(113, 12);
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.Size = new System.Drawing.Size(121, 20);
@@ -44,41 +45,39 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(25, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(79, 14);
             this.label2.TabIndex = 24;
             this.label2.Text = "Animal Type:";
             // 
             // btnAddAnimal
             // 
-            this.btnAddAnimal.Location = new System.Drawing.Point(18, 111);
+            this.btnAddAnimal.BackColor = System.Drawing.Color.Silver;
+            this.btnAddAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddAnimal.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnimal.Location = new System.Drawing.Point(93, 68);
             this.btnAddAnimal.Name = "btnAddAnimal";
             this.btnAddAnimal.Size = new System.Drawing.Size(75, 46);
             this.btnAddAnimal.TabIndex = 22;
             this.btnAddAnimal.Text = "Add";
-            this.btnAddAnimal.UseVisualStyleBackColor = true;
+            this.btnAddAnimal.UseVisualStyleBackColor = false;
             this.btnAddAnimal.Click += new System.EventHandler(this.BtnAddAnimal_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(193, 111);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 46);
-            this.btnClose.TabIndex = 21;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // New_Animal_Type
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 175);
+            this.BackgroundImage = global::Farm_Monitor.Properties.Resources.Pattern3;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(266, 140);
             this.Controls.Add(this.txtTypeName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAddAnimal);
-            this.Controls.Add(this.btnClose);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_Animal_Type";
             this.Text = "New Animal Type";
             this.ResumeLayout(false);
@@ -91,6 +90,5 @@
         private System.Windows.Forms.TextBox txtTypeName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddAnimal;
-        private System.Windows.Forms.Button btnClose;
     }
 }

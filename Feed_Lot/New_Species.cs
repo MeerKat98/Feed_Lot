@@ -55,9 +55,10 @@ namespace Farm_Monitor
             }
         }
 
-        private void BtnClose_Click(object sender, EventArgs e)
+
+        private void New_Species_Load(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

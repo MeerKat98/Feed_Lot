@@ -133,5 +133,51 @@ namespace Farm_Monitor
         {
             tltCloseProg.Show("Close Program",btnExit);
         }
+
+       /* private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "Help")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+
+            if (IsOpen == false)
+            {
+                frmFeedAnimals feed = new frmFeedAnimals();
+                feed.MdiParent = this;
+                feed.Show();
+            }
+        }*/
+
+        private void helpToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "Help")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+
+            if (IsOpen == false)
+            {
+                Help h = new Help();
+                h.MdiParent = this;
+                h.Show();
+            }
+        }
     }
 }
+
+

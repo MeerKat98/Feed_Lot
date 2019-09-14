@@ -117,20 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="HelpForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HelpForm.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>-Animals must be sorted into weight classes.
+-Farmer must be able to see how much the animals are worth.
+-Monitor average individual intake of feed. 
+-Recording of employees’ activities and responsibilities.
+-Simple database interaction.
+-Monitor all animals’ weight gains.
+-Mortality rate must be included in the report.</value>
   </data>
-  <data name="FarmMonitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FarmMonitor.accdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="textBox2.Text" xml:space="preserve">
+    <value>Hardware:
+Minimum system requirements for visual studio 2017:
+·	1.8 GHz or faster processor. Dual-core or better recommended
+·	2 GB of RAM; 4 GB of RAM recommended (2.5 GB minimum if running on a virtual machine)
+·	Hard disk space: up to 130 GB of available space, depending on features installed; typical installations require 20-50 GB of free space.
+·	Hard disk speed: to improve performance, install Windows and Visual Studio on a solid state drive (SSD).
+·	Video card that supports a minimum display resolution of 720p (1280 by 720); Visual Studio will work best at a resolution of WXGA (1366 by 768) or higher.
+</value>
   </data>
-  <data name="42-60149484" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\42-60149484.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox3.Text" xml:space="preserve">
+    <value>-Improve system processes by allowing managers to have a better understanding of the business.
+-Improve system processes  by keeping an up to date record of the work done.
+-Improve system knowledge with proper reporting to be more aware of the state of business
+</value>
   </data>
-  <data name="index" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\index.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox4.Text" xml:space="preserve">
+    <value>-System.InvalidOperationException: "The ConnectionString property has not been initialized".
+
+To fix this error you must initialize your connection string by going to your server explorer --&gt;
+data connection --&gt;
+right click on FarmMonitor databse --&gt; 
+select properties --&gt;
+copy connection string and paste the string where you declare the connection string in code.
+</value>
   </data>
-  <data name="HelpForm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HelpForm1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox10.Text" xml:space="preserve">
+    <value>-Automation of data and information processing.
+-More effective identification by use of bar codes.
+-Notification of irregular eating patterns, as it is an indication of illness.
+-Can include additional information to make the reporting more accurate and efficient.
+-Recording of employees’ activities and responsibilities.
+-Implemetation of mobile appliction.</value>
   </data>
 </root>

@@ -138,7 +138,32 @@ namespace Farm_Monitor
         {
             loadingScreen frmLoad = new loadingScreen();
             frmLoad.ShowDialog();
+            System.Threading.Thread.Sleep(500);
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void helpToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "Help")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+
+            if (IsOpen == false)
+            {
+                Help h = new Help();
+                h.MdiParent = this;
+                h.Show();
+            }
         }
     }
 }
+
+

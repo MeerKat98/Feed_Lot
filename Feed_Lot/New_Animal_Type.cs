@@ -13,7 +13,7 @@ namespace Farm_Monitor
 {
     public partial class New_Animal_Type : Form
     {
-        string connection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Farm_Monitor\FarmMonitor.accdb";
+        string connection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Feed_Lot\FarmMonitor.accdb";
 
         public New_Animal_Type()
         {
@@ -22,25 +22,37 @@ namespace Farm_Monitor
 
         private void BtnAddAnimal_Click(object sender, EventArgs e)
         {
-            string name = txtTypeName.Text;
-            string query = $"SELECT Description FROM ANIMAL_TYPE WHERE Description LIKE '%{name}%'";
-
+            errorProvider1.Clear();
+            Boolean typeTaken = false;
             OleDbConnection con = new OleDbConnection(connection);
-            OleDbCommand cmd = new OleDbCommand(query, con);
             con.Open();
-            Object t = cmd.ExecuteScalar();
-            if (t != null)
+            OleDbCommand cmd = new OleDbCommand("SELECT Description FROM ANIMAL_TYPE", con);
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                con.Close();
-                MessageBox.Show($"The category is too similar to an existing category: {t}, please choose a new name.");
+                if (reader[0].ToString() == txtTypeName.Text)
+                    typeTaken = true;
             }
+            if (txtTypeName.Text == "")
+                errorProvider1.SetError(txtTypeName, "This field cannot be empty!");
+            else if (typeTaken)
+                errorProvider1.SetError(txtTypeName, "That type is already registered!");
             else
             {
-                OleDbCommand cmd2 = new OleDbCommand($@"INSERT INTO ANIMAL_TYPE(Description) VALUES('{name}')", con);
-                cmd2.ExecuteNonQuery();
-                con.Close();
-                this.Close();
+                try
+                {
+                    cmd = new OleDbCommand("INSERT INTO ANIMAL_TYPE (Description) VALUES (@Description)", con);
+                    cmd.Parameters.AddWithValue("@Description", txtTypeName.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("New animal type added succesfully!");
+                    txtTypeName.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Could not add animal type due to an unexpected error: " + ex.Message);
+                }
             }
+            con.Close();
         }
     }
 }

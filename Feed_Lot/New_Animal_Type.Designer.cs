@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_Animal_Type));
             this.txtTypeName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddAnimal = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTypeName
@@ -67,6 +70,10 @@
             this.btnAddAnimal.UseVisualStyleBackColor = false;
             this.btnAddAnimal.Click += new System.EventHandler(this.BtnAddAnimal_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // New_Animal_Type
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -80,6 +87,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_Animal_Type";
             this.Text = "New Animal Type";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,5 +98,6 @@
         private System.Windows.Forms.TextBox txtTypeName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddAnimal;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

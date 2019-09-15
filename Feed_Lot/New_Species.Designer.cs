@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_Species));
             this.btnAddAnimal = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbAnimalType = new System.Windows.Forms.ComboBox();
             this.txtSpeciesName = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddAnimal
@@ -90,6 +93,10 @@
             this.txtSpeciesName.Size = new System.Drawing.Size(121, 20);
             this.txtSpeciesName.TabIndex = 20;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // New_Species
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +113,7 @@
             this.Name = "New_Species";
             this.Text = "New_Species";
             this.Load += new System.EventHandler(this.New_Species_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +126,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbAnimalType;
         private System.Windows.Forms.TextBox txtSpeciesName;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

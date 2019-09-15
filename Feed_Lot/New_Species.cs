@@ -13,7 +13,7 @@ namespace Farm_Monitor
 {
     public partial class New_Species : Form
     {
-        string connection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Farm_Monitor\FarmMonitor.accdb";
+        string connection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MeerKat\Documents\GitRepos\Feed_Lot\FarmMonitor.accdb";
 
         public New_Species()
         {
@@ -34,24 +34,37 @@ namespace Farm_Monitor
 
         private void BtnAddAnimal_Click(object sender, EventArgs e)
         {
-            string name = txtSpeciesName.Text;
-            string query = $"SELECT * FROM ANIMAL_TYPE WHERE Description = '{name}'";
-
+            errorProvider1.Clear();
+            Boolean speciesTaken = false;
             OleDbConnection con = new OleDbConnection(connection);
-            OleDbCommand cmd = new OleDbCommand(query, con);
             con.Open();
-            Object t = cmd.ExecuteScalar();
-            if (t != null)
+            OleDbCommand cmd = new OleDbCommand("SELECT Animal_Type FROM ANIMAL_TYPE WHERE Description = '" + cmbAnimalType.Text + "'", con);
+            OleDbDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string animalType = reader[0].ToString();
+
+            cmd = new OleDbCommand("SELECT Description FROM SPECIES", con);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                MessageBox.Show("The speciesalready exists, please choose a new name.");
+                if (reader[0].ToString() == txtSpeciesName.Text)
+                    speciesTaken = true;
+            }
+            if (txtSpeciesName.Text == "")
+            {
+                errorProvider1.SetError(txtSpeciesName, "This field cannot be empty!");
+            }
+            else if (speciesTaken == true)
+            {
+                errorProvider1.SetError(txtSpeciesName,"This species is already regestered!");
             }
             else
             {
-                OleDbCommand cmd2 = new OleDbCommand($@"INSERT INTO ANIMAL_TYPE(Description) VALUES('{name}')", con);
-                cmd2.ExecuteNonQuery();
+                cmd = new OleDbCommand($@"INSERT INTO SPECIES (Description, Animal_Type) VALUES('{txtSpeciesName.Text}','{animalType}')", con);
+                cmd.ExecuteNonQuery();
                 con.Close();
-
-                this.Close();
+                MessageBox.Show("Species succesfully regestered!" + animalType);
+                txtSpeciesName.Clear();
             }
         }
 

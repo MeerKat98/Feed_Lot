@@ -22,11 +22,6 @@ namespace Farm_Monitor
             InitializeComponent();
         }
 
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void BtnAddAnimal_Click(object sender, EventArgs e)
         {
             Boolean gudData = true;
@@ -51,7 +46,7 @@ namespace Farm_Monitor
                 }
                 catch (Exception ex)
                 {
-                    errInvalidWeight.SetError(txtWeight, "Invalid Weight! " + ex.Message);
+                    errInvalidWeight.SetError(txtWeight, "Invalid Weight! " + ex.Message + "\nNote: Decimals should be indicated with a comma(,)");
                     gudData = false;
                 }
             }
@@ -83,12 +78,14 @@ namespace Farm_Monitor
         public void populate(ComboBox cmb, string sql, string field)
         {
             OleDbConnection con = new OleDbConnection(connectionString);
+            con.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(sql, con);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             cmb.DataSource = ds.Tables[0];
             cmb.DisplayMember = field;
             cmb.ValueMember = field;
+            con.Close();
         }
 
 
@@ -115,11 +112,9 @@ namespace Farm_Monitor
             DateTime dateOnly = dt.Date;
 
             //Inserting of animal with details into Animal Table
-            string cmdQuery = "INSERT INTO ANIMAL (Species_ID,Kraal_ID,Tag_Code,Arrival_Date,Status) VALUES (@Species_ID,@Kraal_ID,@Tag_Code,@Arrival_Date,@Status)";
-            
+            string cmdQuery = "INSERT INTO ANIMAL (Species_ID,Kraal_ID,Tag_Code,Arrival_Date,Status) VALUES (@Species_ID,@Kraal_ID,@Tag_Code,@Arrival_Date,@Status)";            
             //Inserting of animal weight and weighed date with animal_id generated with cmdQuery1
             string cmdQuery2 = "INSERT INTO ANIMAL_WEIGHT (Animal_ID,Date_Weighed,Weight) VALUES (@Animal_ID,@Date_Weighed,@Weight)";
-
             using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
                 using (OleDbCommand cmd = new OleDbCommand(cmdQuery, connection))
@@ -189,7 +184,7 @@ namespace Farm_Monitor
         private void CmbAnimalType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbAnimalType.Text != "System.Data.DataRowView")
-                populate(cmbSpecies, "SELECT Description FROM SPECIES", "Description");
+                populate(cmbSpecies, "SELECT Description FROM SPECIES WHERE Animal_Type = (SELECT Animal_Type FROM ANIMAL_TYPE WHERE Description = '" + cmbAnimalType.Text + "')", "Description");
         }
     }
 }

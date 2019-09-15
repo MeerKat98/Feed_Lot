@@ -79,12 +79,43 @@ namespace Farm_Monitor.Properties {
                 return ((byte[])(obj));
             }
         }
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap index {
             get {
                 object obj = ResourceManager.GetObject("index", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap nastockLogo {
+            get {
+                object obj = ResourceManager.GetObject("nastockLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap NinjaDevs {
+            get {
+                object obj = ResourceManager.GetObject("NinjaDevs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Pattern3 {
+            get {
+                object obj = ResourceManager.GetObject("Pattern3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

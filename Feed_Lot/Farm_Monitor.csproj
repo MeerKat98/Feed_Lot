@@ -66,6 +66,12 @@
     <Compile Include="Kraal.Designer.cs">
       <DependentUpon>Kraal.cs</DependentUpon>
     </Compile>
+    <Compile Include="loadingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadingScreen.Designer.cs">
+      <DependentUpon>loadingScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="New_Animal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kraal.resx">
       <DependentUpon>Kraal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loadingScreen.resx">
+      <DependentUpon>loadingScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New_Animal.resx">
       <DependentUpon>New_Animal.cs</DependentUpon>
@@ -155,6 +164,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\index.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pattern3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nastockLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NinjaDevs.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

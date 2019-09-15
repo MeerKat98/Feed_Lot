@@ -124,6 +124,9 @@
   <data name="index" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\index.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HelpForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HelpForm.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FarmMonitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FarmMonitor.accdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -135,5 +138,8 @@
   </data>
   <data name="NinjaDevs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NinjaDevs.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HelpForm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HelpForm1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

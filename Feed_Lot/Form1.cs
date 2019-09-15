@@ -142,28 +142,6 @@ namespace Farm_Monitor
             this.WindowState = FormWindowState.Maximized;
         }
 
-       /* private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Text == "Help")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-
-            if (IsOpen == false)
-            {
-                frmFeedAnimals feed = new frmFeedAnimals();
-                feed.MdiParent = this;
-                feed.Show();
-            }
-        }*/
-
         private void helpToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             bool IsOpen = false;

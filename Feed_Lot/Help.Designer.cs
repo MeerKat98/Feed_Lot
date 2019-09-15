@@ -28,214 +28,191 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tabUserRequirements = new System.Windows.Forms.TabPage();
+            this.lblHelpUserRequirements = new System.Windows.Forms.Label();
+            this.tabHardwareRequirements = new System.Windows.Forms.TabPage();
+            this.lblHardwareRequirements = new System.Windows.Forms.Label();
+            this.tabGoals = new System.Windows.Forms.TabPage();
+            this.lblGoals = new System.Windows.Forms.Label();
+            this.tabCommonErrors = new System.Windows.Forms.TabPage();
+            this.lblCommonErrors = new System.Windows.Forms.Label();
+            this.tabImprovements = new System.Windows.Forms.TabPage();
+            this.lblImprovements = new System.Windows.Forms.Label();
+            this.tabContacts = new System.Windows.Forms.TabPage();
+            this.lblDevs = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
+            this.tabUserRequirements.SuspendLayout();
+            this.tabHardwareRequirements.SuspendLayout();
+            this.tabGoals.SuspendLayout();
+            this.tabCommonErrors.SuspendLayout();
+            this.tabImprovements.SuspendLayout();
+            this.tabContacts.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.tabUserRequirements);
+            this.tabControl1.Controls.Add(this.tabHardwareRequirements);
+            this.tabControl1.Controls.Add(this.tabGoals);
+            this.tabControl1.Controls.Add(this.tabCommonErrors);
+            this.tabControl1.Controls.Add(this.tabImprovements);
+            this.tabControl1.Controls.Add(this.tabContacts);
+            this.tabControl1.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-3, 4);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(804, 454);
+            this.tabControl1.Size = new System.Drawing.Size(845, 454);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabUserRequirements
             // 
-            this.tabPage1.BackgroundImage = global::Farm_Monitor.Properties.Resources.HelpForm1;
-            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(796, 428);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "User Requirements";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabUserRequirements.BackgroundImage = global::Farm_Monitor.Properties.Resources.Pattern3;
+            this.tabUserRequirements.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabUserRequirements.Controls.Add(this.lblHelpUserRequirements);
+            this.tabUserRequirements.Location = new System.Drawing.Point(4, 26);
+            this.tabUserRequirements.Name = "tabUserRequirements";
+            this.tabUserRequirements.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUserRequirements.Size = new System.Drawing.Size(837, 424);
+            this.tabUserRequirements.TabIndex = 0;
+            this.tabUserRequirements.Text = "User Requirements";
+            this.tabUserRequirements.UseVisualStyleBackColor = true;
+            this.tabUserRequirements.Click += new System.EventHandler(this.TabPage1_Click);
             // 
-            // tabPage2
+            // lblHelpUserRequirements
             // 
-            this.tabPage2.BackgroundImage = global::Farm_Monitor.Properties.Resources.HelpForm1;
-            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(796, 428);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "System Requirements";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.lblHelpUserRequirements.AutoSize = true;
+            this.lblHelpUserRequirements.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelpUserRequirements.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelpUserRequirements.ForeColor = System.Drawing.Color.Silver;
+            this.lblHelpUserRequirements.Location = new System.Drawing.Point(95, 80);
+            this.lblHelpUserRequirements.Name = "lblHelpUserRequirements";
+            this.lblHelpUserRequirements.Size = new System.Drawing.Size(53, 19);
+            this.lblHelpUserRequirements.TabIndex = 1;
+            this.lblHelpUserRequirements.Text = "label1";
             // 
-            // tabPage3
+            // tabHardwareRequirements
             // 
-            this.tabPage3.BackgroundImage = global::Farm_Monitor.Properties.Resources.HelpForm1;
-            this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(796, 428);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Goals";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabHardwareRequirements.BackgroundImage = global::Farm_Monitor.Properties.Resources.Pattern3;
+            this.tabHardwareRequirements.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabHardwareRequirements.Controls.Add(this.lblHardwareRequirements);
+            this.tabHardwareRequirements.Location = new System.Drawing.Point(4, 26);
+            this.tabHardwareRequirements.Name = "tabHardwareRequirements";
+            this.tabHardwareRequirements.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHardwareRequirements.Size = new System.Drawing.Size(837, 424);
+            this.tabHardwareRequirements.TabIndex = 1;
+            this.tabHardwareRequirements.Text = "System Requirements";
+            this.tabHardwareRequirements.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // lblHardwareRequirements
             // 
-            this.tabPage4.BackgroundImage = global::Farm_Monitor.Properties.Resources.HelpForm1;
-            this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage4.Controls.Add(this.textBox4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(796, 428);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Common Errors";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.lblHardwareRequirements.AutoSize = true;
+            this.lblHardwareRequirements.BackColor = System.Drawing.Color.Transparent;
+            this.lblHardwareRequirements.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHardwareRequirements.ForeColor = System.Drawing.Color.Silver;
+            this.lblHardwareRequirements.Location = new System.Drawing.Point(94, 84);
+            this.lblHardwareRequirements.Name = "lblHardwareRequirements";
+            this.lblHardwareRequirements.Size = new System.Drawing.Size(53, 19);
+            this.lblHardwareRequirements.TabIndex = 0;
+            this.lblHardwareRequirements.Text = "label1";
             // 
-            // tabPage5
+            // tabGoals
             // 
-            this.tabPage5.BackgroundImage = global::Farm_Monitor.Properties.Resources.HelpForm1;
-            this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage5.Controls.Add(this.textBox9);
-            this.tabPage5.Controls.Add(this.textBox8);
-            this.tabPage5.Controls.Add(this.textBox7);
-            this.tabPage5.Controls.Add(this.textBox6);
-            this.tabPage5.Controls.Add(this.textBox5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(796, 428);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Developer Contact Details";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabGoals.BackColor = System.Drawing.Color.Transparent;
+            this.tabGoals.BackgroundImage = global::Farm_Monitor.Properties.Resources.Pattern3;
+            this.tabGoals.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabGoals.Controls.Add(this.lblGoals);
+            this.tabGoals.Location = new System.Drawing.Point(4, 26);
+            this.tabGoals.Name = "tabGoals";
+            this.tabGoals.Size = new System.Drawing.Size(837, 424);
+            this.tabGoals.TabIndex = 2;
+            this.tabGoals.Text = "Goals";
             // 
-            // textBox1
+            // lblGoals
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 28);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 98);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.lblGoals.AutoSize = true;
+            this.lblGoals.BackColor = System.Drawing.Color.Transparent;
+            this.lblGoals.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGoals.ForeColor = System.Drawing.Color.Silver;
+            this.lblGoals.Location = new System.Drawing.Point(101, 83);
+            this.lblGoals.Name = "lblGoals";
+            this.lblGoals.Size = new System.Drawing.Size(53, 19);
+            this.lblGoals.TabIndex = 1;
+            this.lblGoals.Text = "label1";
             // 
-            // textBox2
+            // tabCommonErrors
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 46);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(793, 122);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = resources.GetString("textBox2.Text");
+            this.tabCommonErrors.BackgroundImage = global::Farm_Monitor.Properties.Resources.Pattern3;
+            this.tabCommonErrors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabCommonErrors.Controls.Add(this.lblCommonErrors);
+            this.tabCommonErrors.Location = new System.Drawing.Point(4, 26);
+            this.tabCommonErrors.Name = "tabCommonErrors";
+            this.tabCommonErrors.Size = new System.Drawing.Size(837, 424);
+            this.tabCommonErrors.TabIndex = 3;
+            this.tabCommonErrors.Text = "Common Errors";
+            this.tabCommonErrors.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // lblCommonErrors
             // 
-            this.textBox3.Location = new System.Drawing.Point(33, 33);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(327, 96);
-            this.textBox3.TabIndex = 0;
-            this.textBox3.Text = resources.GetString("textBox3.Text");
+            this.lblCommonErrors.AutoSize = true;
+            this.lblCommonErrors.BackColor = System.Drawing.Color.Transparent;
+            this.lblCommonErrors.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCommonErrors.ForeColor = System.Drawing.Color.Silver;
+            this.lblCommonErrors.Location = new System.Drawing.Point(98, 81);
+            this.lblCommonErrors.Name = "lblCommonErrors";
+            this.lblCommonErrors.Size = new System.Drawing.Size(53, 19);
+            this.lblCommonErrors.TabIndex = 2;
+            this.lblCommonErrors.Text = "label1";
             // 
-            // textBox4
+            // tabImprovements
             // 
-            this.textBox4.Location = new System.Drawing.Point(62, 25);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(520, 115);
-            this.textBox4.TabIndex = 0;
-            this.textBox4.Text = resources.GetString("textBox4.Text");
+            this.tabImprovements.BackgroundImage = global::Farm_Monitor.Properties.Resources.Pattern3;
+            this.tabImprovements.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabImprovements.Controls.Add(this.lblImprovements);
+            this.tabImprovements.Location = new System.Drawing.Point(4, 26);
+            this.tabImprovements.Name = "tabImprovements";
+            this.tabImprovements.Size = new System.Drawing.Size(837, 424);
+            this.tabImprovements.TabIndex = 5;
+            this.tabImprovements.Text = "Improvement And Innovation";
+            this.tabImprovements.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // lblImprovements
             // 
-            this.textBox5.Location = new System.Drawing.Point(21, 16);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(211, 77);
-            this.textBox5.TabIndex = 0;
-            this.textBox5.Text = "Jumanah\r\nSel:071 422 3845\r\nEmail:jumanah1998@gmail.com\r\n";
+            this.lblImprovements.AutoSize = true;
+            this.lblImprovements.BackColor = System.Drawing.Color.Transparent;
+            this.lblImprovements.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImprovements.ForeColor = System.Drawing.Color.Silver;
+            this.lblImprovements.Location = new System.Drawing.Point(101, 81);
+            this.lblImprovements.Name = "lblImprovements";
+            this.lblImprovements.Size = new System.Drawing.Size(53, 19);
+            this.lblImprovements.TabIndex = 3;
+            this.lblImprovements.Text = "label1";
             // 
-            // textBox6
+            // tabContacts
             // 
-            this.textBox6.Location = new System.Drawing.Point(21, 304);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(211, 77);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.Text = "Ruan\r\nSel:060 504 1722\r\nEmail:ruanbez1998@gmail.com\r\n";
+            this.tabContacts.BackgroundImage = global::Farm_Monitor.Properties.Resources.Pattern3;
+            this.tabContacts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabContacts.Controls.Add(this.lblDevs);
+            this.tabContacts.Location = new System.Drawing.Point(4, 26);
+            this.tabContacts.Name = "tabContacts";
+            this.tabContacts.Size = new System.Drawing.Size(837, 424);
+            this.tabContacts.TabIndex = 4;
+            this.tabContacts.Text = "Developer Information";
+            this.tabContacts.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // lblDevs
             // 
-            this.textBox7.Location = new System.Drawing.Point(276, 105);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(211, 77);
-            this.textBox7.TabIndex = 2;
-            this.textBox7.Text = "Devan\r\nSel:082 845 9618\r\nEmail:devanmoller51@gmail.com\r\n";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(556, 16);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(211, 77);
-            this.textBox8.TabIndex = 3;
-            this.textBox8.Text = "Rudolph\r\nSel:060 838 9684\r\nEmail:rudolphoosthuizen42@gmail.com\r\n";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(556, 304);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(211, 77);
-            this.textBox9.TabIndex = 4;
-            this.textBox9.Text = "Marsha\r\nSel:083 745 1222\r\nEmail:marsha.fourie@gmail.com\r\n";
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.BackgroundImage = global::Farm_Monitor.Properties.Resources.HelpForm1;
-            this.tabPage6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage6.Controls.Add(this.textBox10);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(796, 428);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Improvement And Innovation";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(74, 17);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(387, 100);
-            this.textBox10.TabIndex = 0;
-            this.textBox10.Text = resources.GetString("textBox10.Text");
+            this.lblDevs.AutoSize = true;
+            this.lblDevs.BackColor = System.Drawing.Color.Transparent;
+            this.lblDevs.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDevs.ForeColor = System.Drawing.Color.Silver;
+            this.lblDevs.Location = new System.Drawing.Point(98, 80);
+            this.lblDevs.Name = "lblDevs";
+            this.lblDevs.Size = new System.Drawing.Size(53, 19);
+            this.lblDevs.TabIndex = 5;
+            this.lblDevs.Text = "label1";
             // 
             // Help
             // 
@@ -243,23 +220,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Farm_Monitor.Properties.Resources.HelpForm1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(817, 464);
             this.Controls.Add(this.tabControl1);
             this.Name = "Help";
             this.Text = "Help";
+            this.Load += new System.EventHandler(this.Help_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
+            this.tabUserRequirements.ResumeLayout(false);
+            this.tabUserRequirements.PerformLayout();
+            this.tabHardwareRequirements.ResumeLayout(false);
+            this.tabHardwareRequirements.PerformLayout();
+            this.tabGoals.ResumeLayout(false);
+            this.tabGoals.PerformLayout();
+            this.tabCommonErrors.ResumeLayout(false);
+            this.tabCommonErrors.PerformLayout();
+            this.tabImprovements.ResumeLayout(false);
+            this.tabImprovements.PerformLayout();
+            this.tabContacts.ResumeLayout(false);
+            this.tabContacts.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -267,21 +245,17 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TabPage tabUserRequirements;
+        private System.Windows.Forms.TabPage tabHardwareRequirements;
+        private System.Windows.Forms.TabPage tabGoals;
+        private System.Windows.Forms.TabPage tabCommonErrors;
+        private System.Windows.Forms.TabPage tabContacts;
+        private System.Windows.Forms.TabPage tabImprovements;
+        private System.Windows.Forms.Label lblHelpUserRequirements;
+        private System.Windows.Forms.Label lblHardwareRequirements;
+        private System.Windows.Forms.Label lblGoals;
+        private System.Windows.Forms.Label lblCommonErrors;
+        private System.Windows.Forms.Label lblImprovements;
+        private System.Windows.Forms.Label lblDevs;
     }
 }
